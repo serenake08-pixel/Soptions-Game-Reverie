@@ -2,23 +2,17 @@
 
 [ext_resource type="Script" uid="uid://dp18dkh1m3ykc" path="res://Scenes/interactions.gd" id="1_ge2sh"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ge2sh"]
-radius = 5.0
-height = 18.0
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3hw64"]
-height = 38.0
-
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1800712132]
 collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_ge2sh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1692417395]
-shape = SubResource("CapsuleShape2D_ge2sh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=590266681]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2043122016]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1743143849]
-shape = SubResource("CapsuleShape2D_3hw64")

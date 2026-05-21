@@ -1,8 +1,43 @@
 extends CharacterBody2D
 
+var overlapping = []
 const defaultSpeed = 100
 const sprintSpeed = 200
 var speed = defaultSpeed
+
+func _ready() -> void:
+	$Area2D.area_entered.connect(_on_area_entered)
+	$Area2D.area_exited.connect(_on_area_exited)
+
+	
+func _on_area_entered(area: Node2D) -> void:
+	var body = area.get_parent()
+	overlapping.append(body)
+	print("entered " + body.name)
+	
+func _on_area_exited(area: Node2D) -> void:
+	var body = area.get_parent()
+	if (!overlapping.has(body)):
+		push_error("So... a body exited without entering if my calculations are correct.")
+	overlapping.erase(body)
+	print("exited" + body.name) 
+
+func _unhandled_input(event):
+	if event.is_action_pressed("interact"):
+		closestBody().interact()
+		pass
+		
+func closestBody() -> Node2D:
+	if overlapping.is_empty():
+		return null
+	var closest = overlapping[0]
+	var closestDist = self.global_position.distance_to(closest.global_position)
+	for body in overlapping:
+		var dist = self.global_position.distance_to(body.global_position)
+		if dist < closestDist:
+			closestDist = dist
+			closest = body
+	return closest
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -12,10 +47,11 @@ func _physics_process(delta: float) -> void:
 	direction.y = Input.get_axis("walkUp", "walkDown")
 	direction = direction.normalized()
 	
-	if Input.is_action_pressed("sprint"):
-		speed = sprintSpeed
-	if Input.is_action_just_released("sprint"):
-		speed = defaultSpeed
+	#
+	#if Input.is_action_pressed("sprint"):
+	#	speed = sprintSpeed
+	#if Input.is_action_just_released("sprint"):
+	#	speed = defaultSpeed
 	
 	if direction.length() > 0:
 		direction = direction.normalized() * speed
@@ -42,5 +78,4 @@ func _physics_process(delta: float) -> void:
 	
 	
 	velocity = direction
-	print(str(position.y) + "ply")
 	move_and_slide()
