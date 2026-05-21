@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="Soptions Game"
-run/main_scene="uid://c21ylvion3xme"
+run/main_scene="uid://dnwn7ftadcbh"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+run/layer_3="Interactables"
+run/layer_2="Player"
+run/layer_1="World"
 
 [autoload]
 
@@ -35,6 +38,11 @@ window/size/viewport_height=270
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
 
 [editor_plugins]
 
@@ -81,12 +89,19 @@ dialogic_default_action={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="World"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Interactables"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

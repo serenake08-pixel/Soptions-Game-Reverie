@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://56y1ox5rne6v"]
+
+[ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="1_cqmme"]
+[ext_resource type="Texture2D" uid="uid://c2b2rqara4v6u" path="res://Assets/interactable stufs/sheep1.png" id="2_6yho7"]
+[ext_resource type="Script" uid="uid://cqiliouacu8yn" path="res://Scenes/sheep/sheep.gd" id="2_blqpc"]
+[ext_resource type="Texture2D" uid="uid://d0r3rqcsdcghj" path="res://Assets/interactable stufs/sheep2.png" id="3_blqpc"]
+[ext_resource type="Texture2D" uid="uid://c4hotboy762es" path="res://Assets/interactable stufs/sheep3.png" id="4_q834e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6yho7"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6yho7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_blqpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q834e")
+}],
+"loop": false,
+"name": &"bend down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q834e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_blqpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_6yho7")
+}],
+"loop": false,
+"name": &"bend up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q834e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_blqpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_q834e")
+}],
+"loop": false,
+"name": &"graze",
+"speed": 1.2
+}]
+
+[node name="Node2D" unique_id=1573480771 instance=ExtResource("1_cqmme")]
+script = ExtResource("2_blqpc")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1692417395]
+position = Vector2(1, -2)
+rotation = 1.5707964
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=590266681]
+position = Vector2(0, 2)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_6yho7")
+animation = &"graze"
+offset = Vector2(0, -199.99997)
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(2043122016) index="0" unique_id=1743143849]
+position = Vector2(1, -7)
+rotation = 1.5707964

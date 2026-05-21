@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dhsku2o0r6asm"]
+
+[ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="1_snreo"]
+[ext_resource type="Texture2D" uid="uid://cxamovvcec8lh" path="res://Assets/interactable stufs/fish.png" id="2_mnctd"]
+[ext_resource type="Texture2D" uid="uid://bsgafmyhodjv" path="res://Assets/interactable stufs/fishsweat1.png" id="3_7b66a"]
+[ext_resource type="Texture2D" uid="uid://eutu3rd2ucb5" path="res://Assets/interactable stufs/fishsweat2.png" id="4_hwdgb"]
+[ext_resource type="Texture2D" uid="uid://bqfdotiu6ut7h" path="res://Assets/interactable stufs/fishsweat3.png" id="5_xqoba"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgdh2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mnctd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7b66a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hwdgb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xqoba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_mnctd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="StaticBody2D" unique_id=1800712132 instance=ExtResource("1_snreo")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1692417395]
+position = Vector2(0, -3)
+rotation = 1.5707964
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=590266681]
+position = Vector2(0, 2.2737368e-13)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_lgdh2")
+offset = Vector2(-19.999998, -379.99997)
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(2043122016) index="0" unique_id=1743143849]
+position = Vector2(0, -15)

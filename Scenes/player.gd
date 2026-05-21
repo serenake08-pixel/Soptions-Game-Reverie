@@ -1,7 +1,8 @@
 extends CharacterBody2D
 
-
-var speed = 300.0
+const defaultSpeed = 100
+const sprintSpeed = 200
+var speed = defaultSpeed
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -12,15 +13,23 @@ func _physics_process(delta: float) -> void:
 	direction = direction.normalized()
 	
 	if Input.is_action_pressed("sprint"):
-		speed = 500
+		speed = sprintSpeed
 	if Input.is_action_just_released("sprint"):
-		speed = 300
+		speed = defaultSpeed
 	
 	if direction.length() > 0:
 		direction = direction.normalized() * speed
 		$AnimatedSprite2D.play()
 	else:
 		$AnimatedSprite2D.stop()
+		if $AnimatedSprite2D.animation == "walkRight":
+			$AnimatedSprite2D.animation = "idleRight"
+		elif $AnimatedSprite2D.animation == "walkLeft":
+			$AnimatedSprite2D.animation = "idleLeft"
+		elif $AnimatedSprite2D.animation == "walkUp":
+			$AnimatedSprite2D.animation = "idleUp"
+		elif $AnimatedSprite2D.animation == "walkDown":
+			$AnimatedSprite2D.animation = "idleDown"
 	
 	if direction.y < 0:
 		$AnimatedSprite2D.animation = "walkUp"
@@ -31,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	elif direction.x < 0:
 		$AnimatedSprite2D.animation = "walkLeft"
 	
-	velocity = direction
 	
+	velocity = direction
+	print(str(position.y) + "ply")
 	move_and_slide()
