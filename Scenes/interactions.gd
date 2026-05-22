@@ -14,7 +14,6 @@ func interact() -> void:
 func startDialouge(path: String) -> void:
 	Dialogic.start(path)
 	await Dialogic.timeline_ended
-	print("Dialogue finished!" + self.name)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

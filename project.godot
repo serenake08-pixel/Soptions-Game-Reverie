@@ -25,17 +25,21 @@ Dialogic="*uid://ds2q0uclmolvu"
 [dialogic]
 
 directories/dch_directory={
-"Manmer": "res://Assets/Dialogic Files/Manmer.dch"
+"Manmer": "res://Assets/Dialogic Files/Manmer.dch",
+"you": "res://Assets/Dialogic Files/you.dch"
 }
 directories/dtl_directory={
 "manmertalktest": "res://Assets/Dialogic Files/manmertalktest.dtl"
 }
 layout/style_directory={
-"StyleTest": "res://Assets/Dialogic Files/StyleTest.tres"
+"": "res://Assets/Dialogic Files/dialogboxtest.tres",
+"dialogboxtest": "res://Assets/Dialogic Files/dialogboxtest.tres"
 }
-layout/style_list=["res://Assets/Dialogic Files/StyleTest.tres"]
-layout/default_style=""
-variables={}
+layout/style_list=["res://Assets/Dialogic Files/dialogboxtest.tres"]
+layout/default_style="res://Assets/Dialogic Files/dialogboxtest.tres"
+variables={
+"rng": "-1"
+}
 
 [display]
 

@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dkl0xo3yyhefa"]
+
+[ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="1_w0sel"]
+[ext_resource type="Texture2D" uid="uid://7mgohtqiu3c0" path="res://Assets/interactable stufs/stopsign.png" id="2_25bpw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_25bpw"]
+radius = 2.0
+height = 4.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nu6kx"]
+radius = 1.0
+
+[node name="StaticBody2D" unique_id=1800712132 instance=ExtResource("1_w0sel")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1692417395]
+position = Vector2(-1, -1)
+shape = SubResource("CapsuleShape2D_25bpw")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(2043122016) index="0" unique_id=1743143849]
+position = Vector2(-1, -13)
+shape = SubResource("CapsuleShape2D_nu6kx")
+
+[node name="Stopsign" type="Sprite2D" parent="." index="3" unique_id=538831478]
+position = Vector2(0, -0.99999976)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_25bpw")
+offset = Vector2(-19.99996, -359.99997)

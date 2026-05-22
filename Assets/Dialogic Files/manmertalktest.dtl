@@ -1,0 +1,17 @@
+Manmer: ...That's a great question. I believe I would be the perfect candidate because...throughout my career...hard-working...
+- You are..
+	you: On second thought, you realize you do recognize your old pal Manmer. From where though, that doesn't concern you for some reason.
+- What
+Manmer: Aaaaa what I am I going to do about my interview?! One question and I'll be a fish out of water!
+- I'll help you!
+	Manmer: Holy mackeral, that would be great! Here, answer my prep questions\:
+- That's rough buddy
+- Shrug and wander off
+Manmer: Ok. Question 1. What is your biggest strength and weakness?
+Manmer: 2. What past experiences qualify you for this job?
+Manmer: 3. Where do you see yourself in 10 years?
+- What are we but a school of sardines sticking out each day.
+- When is your interview
+	set {rng} = range(2,7).pick_random()
+	Manmer: In flipping {rng} minutes!
+Manmer: Nothing will change how flying-fish-fried I am...

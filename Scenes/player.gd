@@ -4,6 +4,7 @@ var overlapping = []
 const defaultSpeed = 100
 const sprintSpeed = 200
 var speed = defaultSpeed
+var disabled = false
 
 func _ready() -> void:
 	$Area2D.area_entered.connect(_on_area_entered)
@@ -24,7 +25,8 @@ func _on_area_exited(area: Node2D) -> void:
 
 func _unhandled_input(event):
 	if event.is_action_pressed("interact"):
-		closestBody().interact()
+		if closestBody() != null && Dialogic.current_timeline == null:
+			closestBody().interact()
 		pass
 		
 func closestBody() -> Node2D:
@@ -40,6 +42,8 @@ func closestBody() -> Node2D:
 	return closest
 
 func _physics_process(delta: float) -> void:
+	if disabled:
+		return
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Vector2.ZERO
