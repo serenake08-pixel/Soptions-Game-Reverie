@@ -30,6 +30,7 @@ scene = ExtResource("4_1nwiv")
 script = ExtResource("2_f3lrr")
 scene = ExtResource("5_pt67y")
 overrides = {
+"box_panel": "\"res://Assets/Dialogic Files/style_box.tres\"",
 "box_size": "Vector2(350, 75)",
 "name_label_custom_size": "30.0",
 "text_custom_size": "7.0",
@@ -69,4 +70,4 @@ layer_info = {
 "15": SubResource("Resource_4dpdj"),
 "16": SubResource("Resource_nu7vy")
 }
-metadata/_latest_layer = "12"
+metadata/_latest_layer = "17"

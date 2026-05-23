@@ -1,0 +1,15 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://d7koxnvwi22m"]
+
+[ext_resource type="Texture2D" uid="uid://cexivmwkxs1sd" path="res://Assets/Dialogic Files/textbox_namebox.png" id="1_4350d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4350d"]
+atlas = ExtResource("1_4350d")
+region = Rect2(87.410675, 174.1677, 312.58932, 81.832306)
+
+[resource]
+content_margin_left = 10.0
+texture = SubResource("AtlasTexture_4350d")
+texture_margin_left = 99.0
+texture_margin_top = 25.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
