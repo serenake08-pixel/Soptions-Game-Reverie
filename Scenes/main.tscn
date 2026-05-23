@@ -77,24 +77,30 @@ resource_name = "tree1"
 texture = ExtResource("9_tree1")
 texture_region_size = Vector2i(640, 896)
 0:0/0 = 0
+0:0/0/y_sort_origin = 230
 0:0/0/terrain_set = 1
 0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-33.637512, 293.56378, 45.869324, 366.9547, 73.39093, 455.6355, -30.57959, 440.3457)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tree2"]
 resource_name = "tree2"
 texture = ExtResource("9_tree2")
 texture_region_size = Vector2i(640, 896)
 0:0/0 = 0
+0:0/0/y_sort_origin = 230
 0:0/0/terrain_set = 1
 0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(21.4057, 321.0854, 94.79663, 330.25928, 91.73865, 415.88208, -61.15912, 409.7661)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tree3"]
 resource_name = "tree3"
 texture = ExtResource("9_tree3")
 texture_region_size = Vector2i(640, 896)
 0:0/0 = 0
+0:0/0/y_sort_origin = 230
 0:0/0/terrain_set = 1
 0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-61.15912, 318.0274, 3.0579224, 348.607, -3.0579834, 428.1139, -88.680725, 425.0559)
 
 [sub_resource type="TileSet" id="TileSet_hptm8"]
 tile_shape = 3
