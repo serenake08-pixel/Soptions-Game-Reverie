@@ -10,5 +10,4 @@ func _process(delta: float) -> void:
 	pass
 	
 func interact() -> void:
-	Dialogic.start("res://Assets/Dialogic Files/manmertalktest.dtl")
-	await Dialogic.timeline_ended
+	await startDialogue("res://Assets/Dialogic Files/manmertalktest.dtl")

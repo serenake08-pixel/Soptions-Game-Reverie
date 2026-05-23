@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dnwn7ftadcbh"]
 
 [ext_resource type="PackedScene" uid="uid://c21ylvion3xme" path="res://Scenes/player.tscn" id="1_bo1nx"]
-[ext_resource type="Script" uid="uid://bkikxwk8e8x1t" path="res://Scenes/global.gd" id="1_hptm8"]
+[ext_resource type="Script" uid="uid://bkikxwk8e8x1t" path="res://Scenes/main.gd" id="1_hptm8"]
 [ext_resource type="Texture2D" uid="uid://dwqrfulf07ppb" path="res://Assets/Background Stuff/fog.png" id="2_6iyac"]
 [ext_resource type="Texture2D" uid="uid://vmbumx6aimfn" path="res://Assets/Background Stuff/grassSpriteSheet .png" id="2_8gbba"]
 [ext_resource type="Texture2D" uid="uid://5m5r1bstaaio" path="res://Assets/Background Stuff/Untitled design copy.png" id="2_d1ilt"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dhsku2o0r6asm" path="res://Scenes/manmer.tscn" id="3_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://dkl0xo3yyhefa" path="res://Scenes/stopsign.tscn" id="3_kry3j"]
 [ext_resource type="PackedScene" uid="uid://dhhl2vy6rdepm" path="res://Scenes/computer.tscn" id="8_344ge"]
+[ext_resource type="Texture2D" uid="uid://ds400cylf871" path="res://Assets/Background Stuff/tree1.png" id="9_tree1"]
+[ext_resource type="Texture2D" uid="uid://di1ay6pkpy3ft" path="res://Assets/Background Stuff/tree2.png" id="9_tree2"]
+[ext_resource type="Texture2D" uid="uid://b3gmrlucu462d" path="res://Assets/Background Stuff/tree3.png" id="9_tree3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdnlq"]
 texture = ExtResource("2_6iyac")
@@ -69,6 +72,30 @@ texture_region_size = Vector2i(400, 400)
 0:0/0/terrain = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(210.58862, 88.03296, 110.47272, 182.97043, -46.498703, 169.00085, -150, 27.618195, 50.057953, 65.5932)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tree1"]
+resource_name = "tree1"
+texture = ExtResource("9_tree1")
+texture_region_size = Vector2i(640, 896)
+0:0/0 = 0
+0:0/0/terrain_set = 1
+0:0/0/terrain = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tree2"]
+resource_name = "tree2"
+texture = ExtResource("9_tree2")
+texture_region_size = Vector2i(640, 896)
+0:0/0 = 0
+0:0/0/terrain_set = 1
+0:0/0/terrain = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tree3"]
+resource_name = "tree3"
+texture = ExtResource("9_tree3")
+texture_region_size = Vector2i(640, 896)
+0:0/0 = 0
+0:0/0/terrain_set = 1
+0:0/0/terrain = 0
+
 [sub_resource type="TileSet" id="TileSet_hptm8"]
 tile_shape = 3
 tile_size = Vector2i(300, 400)
@@ -77,9 +104,15 @@ physics_layer_0/collision_mask = 2
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Rocks"
 terrain_set_0/terrain_0/color = Color(0.40614337, 0.38589296, 0.32097796, 1)
+terrain_set_1/mode = 0
+terrain_set_1/terrain_0/name = "Trees"
+terrain_set_1/terrain_0/color = Color(0.24, 0.56, 0.22, 1)
 sources/0 = SubResource("TileSetAtlasSource_ynf5e")
 sources/5 = SubResource("TileSetAtlasSource_hptm8")
 sources/6 = SubResource("TileSetAtlasSource_d1ilt")
+sources/7 = SubResource("TileSetAtlasSource_tree1")
+sources/8 = SubResource("TileSetAtlasSource_tree2")
+sources/9 = SubResource("TileSetAtlasSource_tree3")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jjvhh"]
 resource_name = "Grass"

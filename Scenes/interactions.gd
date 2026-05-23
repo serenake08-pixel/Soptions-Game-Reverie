@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends CharacterBody2D
 class_name Interactable
 
 var rng = RandomNumberGenerator.new()
@@ -11,7 +11,7 @@ func _ready() -> void:
 func interact() -> void:
 	pass
 
-func startDialouge(path: String) -> void:
+func startDialogue(path: String) -> void:
 	Dialogic.start(path)
 	await Dialogic.timeline_ended
 

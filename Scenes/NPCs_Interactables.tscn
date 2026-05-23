@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dp18dkh1m3ykc" path="res://Scenes/interactions.gd" id="1_ge2sh"]
 
-[node name="StaticBody2D" type="StaticBody2D" unique_id=1800712132]
+[node name="StaticBody2D" type="CharacterBody2D" unique_id=1800712132]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_ge2sh")

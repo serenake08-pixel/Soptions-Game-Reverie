@@ -3,13 +3,12 @@ extends Interactable
 var walking = false
 var walkTime = 2.0
 var direction
-var speed = rng.randi_range(50, 150)
+var speed: int
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
+	speed = rng.randi_range(50, 150)
 	$AnimatedSprite2D.flip_h = bool(randi() % 2)
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -48,13 +47,6 @@ func _graze() -> void:
 	else:
 		_walk()
 		walking = true
-		return
-		if r <= 2:
-			$AnimatedSprite2D.play("bend down")
-			#print("down")
-		elif r >= 3:
-			_walk()
-			walking = true
 			
 
 func _walk() -> void:
