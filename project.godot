@@ -42,6 +42,7 @@ layout/default_style="res://Assets/Dialogic Files/dialogboxtest.tres"
 variables={
 "rng": "-1"
 }
+glossary/default_case_sensitive=true
 
 [display]
 

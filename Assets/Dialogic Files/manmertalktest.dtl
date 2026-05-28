@@ -7,9 +7,9 @@ Manmer: Aaaaa what I am I going to do about my interview?! One question and I'll
 	Manmer: Holy mackeral, that would be great! Here, answer my prep questions\:
 - That's rough buddy
 - Shrug and wander off
-Manmer: Ok. Question 1. What is your biggest strength and weakness?
-Manmer: 2. What past experiences qualify you for this job?
-Manmer: 3. Where do you see yourself in 10 years?
+Manmer: Where do you see yourself in 10 years
+Manmer: <Empty Text Event>
+Manmer: Text here I'm going to say something probably maybe
 - What are we but a school of sardines sticking out each day.
 - When is your interview
 	set {rng} = range(2,7).pick_random()
