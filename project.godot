@@ -26,9 +26,11 @@ Dialogic="*uid://ds2q0uclmolvu"
 
 directories/dch_directory={
 "Manmer": "res://Assets/Dialogic Files/Manmer.dch",
+"Mikazuki": "res://Assets/Dialogic Files/Mikazuki.dch",
 "you": "res://Assets/Dialogic Files/you.dch"
 }
 directories/dtl_directory={
+"MikazukiMeet": "res://Assets/Dialogic Files/MikazukiMeet.dtl",
 "manmertalktest": "res://Assets/Dialogic Files/manmertalktest.dtl"
 }
 layout/style_directory={

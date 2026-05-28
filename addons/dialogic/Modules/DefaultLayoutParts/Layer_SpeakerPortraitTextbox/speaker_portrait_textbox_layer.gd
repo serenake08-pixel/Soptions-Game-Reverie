@@ -94,6 +94,8 @@ func _apply_export_overrides() -> void:
 	panel.position = Vector2(-box_size.x/2, -box_size.y-box_distance)
 	portrait_panel.size_flags_stretch_ratio = portrait_stretch_factor
 
+	$Anchor/Panel/MarginContainer.add_theme_constant_override(&"margin_top", 20)
+
 	var stylebox: StyleBox = load(box_panel)
 	panel.add_theme_stylebox_override(&'panel', stylebox)
 

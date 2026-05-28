@@ -10,7 +10,7 @@ extends DialogicLayoutLayer
 @export_file('*.ttf', '*.tres') var font_custom: String = ""
 @export_subgroup('Size')
 @export var font_size_use_global: bool = true
-@export var font_size_custom: int = 16
+@export var font_size_custom: int = 10
 @export_subgroup('Color')
 @export var text_color_use_global: bool = true
 @export var text_color_custom: Color = Color.WHITE
@@ -54,6 +54,7 @@ func get_button_sound() -> DialogicNode_ButtonSound:
 
 ## Method that applies all exported settings
 func _apply_export_overrides() -> void:
+
 	# apply text settings
 	var layer_theme: Theme = Theme.new()
 

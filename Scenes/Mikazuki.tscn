@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bubp5ft6dg0oa"]
+
+[ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="1_4a4tc"]
+[ext_resource type="Script" uid="uid://ch4kxs0c71673" path="res://Scenes/mikazuki.gd" id="2_mdjog"]
+[ext_resource type="Texture2D" uid="uid://c5ux7vlh1gecn" path="res://Assets/interactable stufs/swordgirl1.png" id="2_vqsd1"]
+[ext_resource type="Texture2D" uid="uid://b3ldcpqafoxi1" path="res://Assets/interactable stufs/swordgirl2.png" id="3_mdjog"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cslv7"]
+radius = 5.0
+height = 20.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_im87v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vqsd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mdjog")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fye4b"]
+radius = 14.0
+
+[node name="StaticBody2D" unique_id=1800712132 instance=ExtResource("1_4a4tc")]
+script = ExtResource("2_mdjog")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1692417395]
+position = Vector2(1, -1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_cslv7")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=590266681]
+position = Vector2(0, -17.999998)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_im87v")
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(2043122016) index="0" unique_id=1743143849]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_fye4b")
