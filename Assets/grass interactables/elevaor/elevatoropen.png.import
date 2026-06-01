@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3ldcpqafoxi1"
-path="res://.godot/imported/swordgirl2.png-278bfc579efc94014e45b79240cadc16.ctex"
+uid="uid://cm3l1cbknij0v"
+path="res://.godot/imported/elevatoropen.png-9a0b806ad98a44527167725e12fd7b03.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/interactable stufs/swordgirl2.png"
-dest_files=["res://.godot/imported/swordgirl2.png-278bfc579efc94014e45b79240cadc16.ctex"]
+source_file="res://Assets/grass interactables/elevaor/elevatoropen.png"
+dest_files=["res://.godot/imported/elevatoropen.png-9a0b806ad98a44527167725e12fd7b03.ctex"]
 
 [params]
 

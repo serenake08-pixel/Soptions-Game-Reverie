@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brsn5j0hxvb3j"
-path="res://.godot/imported/computer.png-019d79139fb03912063cf0046424b2f7.ctex"
+uid="uid://bqfdotiu6ut7h"
+path="res://.godot/imported/fishsweat3.png-14eb0ba223ef6f1955b7de4672eacd21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/interactable stufs/computer.png"
-dest_files=["res://.godot/imported/computer.png-019d79139fb03912063cf0046424b2f7.ctex"]
+source_file="res://Assets/grass interactables/fishsweat3.png"
+dest_files=["res://.godot/imported/fishsweat3.png-14eb0ba223ef6f1955b7de4672eacd21.ctex"]
 
 [params]
 

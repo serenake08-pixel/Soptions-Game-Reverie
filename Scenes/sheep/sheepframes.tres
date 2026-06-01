@@ -1,8 +1,8 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://biqecgvwjtnmp"]
 
-[ext_resource type="Texture2D" uid="uid://c2b2rqara4v6u" path="res://Assets/interactable stufs/sheep1.png" id="1_y8moq"]
-[ext_resource type="Texture2D" uid="uid://d0r3rqcsdcghj" path="res://Assets/interactable stufs/sheep2.png" id="2_j4sgm"]
-[ext_resource type="Texture2D" uid="uid://c4hotboy762es" path="res://Assets/interactable stufs/sheep3.png" id="3_4dkg3"]
+[ext_resource type="Texture2D" uid="uid://c2b2rqara4v6u" path="res://Assets/grass interactables/sheep1.png" id="1_y8moq"]
+[ext_resource type="Texture2D" uid="uid://d0r3rqcsdcghj" path="res://Assets/grass interactables/sheep2.png" id="2_j4sgm"]
+[ext_resource type="Texture2D" uid="uid://c4hotboy762es" path="res://Assets/grass interactables/sheep3.png" id="3_4dkg3"]
 
 [resource]
 resource_local_to_scene = true

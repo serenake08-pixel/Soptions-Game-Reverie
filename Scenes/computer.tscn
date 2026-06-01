@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="1_j2xe6"]
 [ext_resource type="Script" uid="uid://cwtfpycm41fh8" path="res://Scenes/computer.gd" id="2_7h0tq"]
-[ext_resource type="Texture2D" uid="uid://brsn5j0hxvb3j" path="res://Assets/interactable stufs/computer.png" id="2_m1ujp"]
+[ext_resource type="Texture2D" uid="uid://brsn5j0hxvb3j" path="res://Assets/grass interactables/computer.png" id="2_m1ujp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7h0tq"]
 radius = 5.0

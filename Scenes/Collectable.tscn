@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://imodq47wpqxy"]
+
+[ext_resource type="Script" uid="uid://b0nf004ox0fyf" path="res://collectable.gd" id="1_5d6ol"]
+
+[node name="Node2D" type="Sprite2D" unique_id=1774154770]
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_5d6ol")
+itemName = null
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1416121586]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2062357937]

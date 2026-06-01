@@ -31,6 +31,8 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "MikazukiMeet": "res://Assets/Dialogic Files/MikazukiMeet.dtl",
+"collectable_found": "res://Assets/Dialogic Files/collectable_found.dtl",
+"manmer_notfoundyet": "res://Assets/Dialogic Files/manmer_notfoundyet.dtl",
 "manmertalktest": "res://Assets/Dialogic Files/manmertalktest.dtl"
 }
 layout/style_directory={
@@ -40,7 +42,12 @@ layout/style_directory={
 layout/style_list=["res://Assets/Dialogic Files/dialogboxtest.tres"]
 layout/default_style="res://Assets/Dialogic Files/dialogboxtest.tres"
 variables={
-"rng": "-1"
+"Inventory": {
+"RESUME": false
+},
+"collectable": "nothing?",
+"metFish": false,
+"rng": -1
 }
 glossary/default_case_sensitive=true
 

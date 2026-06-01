@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c380vgbpkysl5"
-path="res://.godot/imported/nsheepwalk.png-9a7c2a4ee0910e545af6f8f2367618c3.ctex"
+uid="uid://b6ngjyss8nyf"
+path="res://.godot/imported/resume.png-f4306d5e8e9352e612519c1a298043fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/interactable stufs/nsheepwalk.png"
-dest_files=["res://.godot/imported/nsheepwalk.png-9a7c2a4ee0910e545af6f8f2367618c3.ctex"]
+source_file="res://Assets/quest/resume.png"
+dest_files=["res://.godot/imported/resume.png-f4306d5e8e9352e612519c1a298043fa.ctex"]
 
 [params]
 

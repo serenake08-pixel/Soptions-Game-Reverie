@@ -19,7 +19,7 @@ func _on_computer_minigame() -> void:
 		minigameInstance.queue_free()
 		$Player.disabled = false
 	
-	pass
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

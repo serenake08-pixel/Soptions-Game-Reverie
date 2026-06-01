@@ -2,8 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="1_4a4tc"]
 [ext_resource type="Script" uid="uid://ch4kxs0c71673" path="res://Scenes/mikazuki.gd" id="2_mdjog"]
-[ext_resource type="Texture2D" uid="uid://c5ux7vlh1gecn" path="res://Assets/interactable stufs/swordgirl1.png" id="2_vqsd1"]
-[ext_resource type="Texture2D" uid="uid://b3ldcpqafoxi1" path="res://Assets/interactable stufs/swordgirl2.png" id="3_mdjog"]
+[ext_resource type="Texture2D" uid="uid://c5ux7vlh1gecn" path="res://Assets/grass interactables/swordgirl1.png" id="2_vqsd1"]
+[ext_resource type="Texture2D" uid="uid://b3ldcpqafoxi1" path="res://Assets/grass interactables/swordgirl2.png" id="3_mdjog"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cslv7"]
 radius = 5.0

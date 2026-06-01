@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://42u2oou4y8a"]
+
+[ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="1_sopnf"]
+[ext_resource type="Texture2D" uid="uid://cbd2tk7cpslsh" path="res://Assets/grass interactables/elevaor/elevatorclosed.png" id="2_uble1"]
+[ext_resource type="Texture2D" uid="uid://cu0lmb1f8gmvj" path="res://Assets/grass interactables/elevaor/elevator1.png" id="3_terx2"]
+[ext_resource type="Texture2D" uid="uid://bntwupd0il7ql" path="res://Assets/grass interactables/elevaor/elevator2.png" id="4_0r1lu"]
+[ext_resource type="Texture2D" uid="uid://7b3udo4h54cx" path="res://Assets/grass interactables/elevaor/elevator3.png" id="5_7ad3g"]
+[ext_resource type="Texture2D" uid="uid://2ovvhq4yik4b" path="res://Assets/grass interactables/elevaor/elevator4.png" id="6_u00w3"]
+[ext_resource type="Texture2D" uid="uid://bpyh1ojuaf41w" path="res://Assets/grass interactables/elevaor/elevator5.png" id="7_dpvw3"]
+[ext_resource type="Texture2D" uid="uid://cm3l1cbknij0v" path="res://Assets/grass interactables/elevaor/elevatoropen.png" id="8_levuu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_le187"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cf2ye"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uble1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uble1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_terx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0r1lu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7ad3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u00w3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_dpvw3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_levuu")
+}],
+"loop": true,
+"name": &"open",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y0j0d"]
+size = Vector2(435, 865.5)
+
+[node name="StaticBody2D" unique_id=1800712132 instance=ExtResource("1_sopnf")]
+scale = Vector2(0.05, 0.05)
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1692417395]
+shape = SubResource("RectangleShape2D_le187")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=590266681]
+position = Vector2(-6, -284)
+sprite_frames = SubResource("SpriteFrames_cf2ye")
+animation = &"idle"
+
+[node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(2043122016) index="0" unique_id=1743143849]
+position = Vector2(2, -282)
+shape = SubResource("RectangleShape2D_y0j0d")

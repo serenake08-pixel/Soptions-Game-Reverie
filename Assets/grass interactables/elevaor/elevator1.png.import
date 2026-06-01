@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxamovvcec8lh"
-path="res://.godot/imported/fish.png-de165cd7ec91a50b138f4dc4815bf2a0.ctex"
+uid="uid://cu0lmb1f8gmvj"
+path="res://.godot/imported/elevator1.png-49f51b764514ba6b8c6aeb4e80243598.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/interactable stufs/fish.png"
-dest_files=["res://.godot/imported/fish.png-de165cd7ec91a50b138f4dc4815bf2a0.ctex"]
+source_file="res://Assets/grass interactables/elevaor/elevator1.png"
+dest_files=["res://.godot/imported/elevator1.png-49f51b764514ba6b8c6aeb4e80243598.ctex"]
 
 [params]
 

@@ -1,17 +1,60 @@
-Manmer: ...That's a great question. I believe I would be the perfect candidate because...throughout my career...hard-working...
-- You are..
-	you: On second thought, you realize you do recognize your old pal Manmer. From where though, that doesn't concern you for some reason.
-- What
-Manmer: Aaaaa what I am I going to do about my interview?! One question and I'll be a fish out of water!
+if {metFish} == true:
+	if {Inventory.RESUME} == false:
+		Manmer: I wonder what i should put in my future cubicle.
+		Manmer: Hey, have you found my resume yet? it should be in the tall grass.
+		[end_timeline]
+	else:
+		you: Here it is!
+		Manmer: Holy m*ckeral.
+		He holds up the resume and admires it.
+		Manmer: I shouldn’t swear around children.
+		Manmer: I thank you from the bottom of my heart!
+		Manmer: I’m going to go eat tiramisu to celebrate.
+		you: That’s my favorite dessert, too.
+		Manmer: Aren’t we are all the same in the grand scheme of things?
+		Manmer: Though the future is uncertain, you must always have faith in yourself.
+		He looks deep in thought.
+		Manmer: When I was little, I had a bad fall on my bicycle.
+		Manmer: I broke my leg. It took weeks and weeks to heal.
+		Manmer: Alone on the hospital bed, I felt that my leg would be like that forever.
+		Manmer: But it healed. Everything requires time, young one.
+		Manmer: Thanks for helping a trout out. I’m indebted to you.
+		[signal arg_type="dict" arg="{"memory":"res://Assets/pictures/manmer_memory.tres"}"]
+		you: A memory resurfaces in your mind...
+		you: You feel strangely calm. You want to thank him but can’t find the words to.
+		[end_timeline]
+Manmer: ...
+you: He seems sad.
+Manmer: My life is DOOMED! i’m letting everyone down..
+- Something's fishy here
+	Manmer: I'm very sensitive to puns...
+	you: I sea
+	Manmer: ...
+	you: Sorry.
+	you: What's wrong?
+- What's wrong?
+Manmer: The end is near. I can feel the darkness creeping up on me. Tell my family i love them.
+Manmer: Our lives are but bits of dust in the infinite universe. each day I feel as if I’m a certain man pushing a stone up a hill.
+Manmer: What did you say? "What’s wrong"? Everything is wrong, young one.
+- But you’re not a man, you’re a fish
+	Manmer: Same thing. We are all the same in the grand scheme of things.
+- Sisyphus mention?
+	Manmer: SHH...he's going to copyright claim me.
+Manmer: I’ve talked too much. if you’ll excuse me, i must go now.
+you: Why the hurry?
+Manmer: I must continue my search for meaning in this cruel world.
+Manmer: ...
+Manmer: I must also search for my resume.
 - I'll help you!
-	Manmer: Holy mackeral, that would be great! Here, answer my prep questions\:
-- That's rough buddy
-- Shrug and wander off
-Manmer: Where do you see yourself in 10 years
-Manmer: <Empty Text Event>
-Manmer: Text here I'm going to say something probably maybe
-- What are we but a school of sardines sticking out each day.
-- When is your interview
-	set {rng} = range(2,7).pick_random()
-	Manmer: In flipping {rng} minutes!
-Manmer: Nothing will change how flying-fish-fried I am...
+	Manmer: You are kind.
+	Manmer: It might be in the tall grass, could you go search for me?
+	you: On it, boss.
+- Good luck with that.
+	Manmer: You’ll help me, won’t you?
+	Manmer: Don’t look at me like that.
+	Manmer: Ever since i was a child i wanted to be an investment banker. you’ll help me achieve my dreams, won’t you?
+	you: Okay then.
+	Manmer: I’m afraid the tall grass is hiding my resume from me. go give it a look, will you?
+set {metFish} = true
+[signal arg="fishQuest"]
+[end_timeline]

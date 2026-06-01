@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drdo364ovqwbv"
-path="res://.godot/imported/nsheepwalk2.png-ce4f1f52b6edb02706555dd41dbd79ac.ctex"
+uid="uid://7mgohtqiu3c0"
+path="res://.godot/imported/stopsign.png-621be10035239c05bce25be6d3d201a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/interactable stufs/nsheepwalk2.png"
-dest_files=["res://.godot/imported/nsheepwalk2.png-ce4f1f52b6edb02706555dd41dbd79ac.ctex"]
+source_file="res://Assets/grass interactables/stopsign.png"
+dest_files=["res://.godot/imported/stopsign.png-621be10035239c05bce25be6d3d201a8.ctex"]
 
 [params]
 

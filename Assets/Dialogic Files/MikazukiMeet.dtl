@@ -1,4 +1,48 @@
-Mikazuki: ...
-- Who u
-- Thanks
-- Ew
+The girl's composure screams someone straight out an action movie.
+Curiously, you recognize her instantly.
+- Wow your sword is so cool
+- Thanks for saving me!
+- You have my respect
+- *Shake your head*
+	You shake your head in disbelief, awed by her presence.
+The girl nods. She unsheathes her sword and points it into the distance.
+Instantly you understand she is inviting you to a meal, with not a single word more than necessary.
+[wait time="1.0"]
+As you dig into some delicious lamb chops, the girl excuses herself to gather food for supper.
+All alone, something tugs at your heartstrings as you recall her past\:
+A poor child, forsaken and sold by her parents to the royal family.
+And yet, her courage was how she climbed the ranks to become the Imperial Shogun...
+...all without harboring a single drop of resentment in her pure heart.
+A deep desire bubbles up, to be a cool sword girl living in this quaint house in a quaint field.
+Suddenly, you realize you forgot your .
+[wait time="1.0"]
+you: Are you...
+- are you shearing the sheep?
+	Mikazuki: She shakes her head.
+	- are you...killing the sheep?
+- are you playing peek-a-boo with the sheep?
+	Mikazuki: She quizzically shakes her head.
+	- are you...killing the sheep?
+- are you basking in the sheep's wool?
+	Mikazuki: She quizzically shakes her head.
+	- are you...killing the sheep?
+you: You...you can't! Those sheep are my friends!
+Mikazuki: She closes her eyes.
+Mikazuki: Thus is the way of life.
+[wait time="1.0"]
+Mikazuki: She glaces at you, as if saying, "You were the one who created the soul standing before you now."
+Mikazuki: "In that moment, when your fingertips were pressing those buttons, what were you looking for?"
+- An escape
+	Mikazuki: "...Then I am glad I could help you escape, even if only temporarily."
+- A friend
+	Mikazuki: "I am sorry then, that I cannot coexist with your sheep friends in this world..."
+- An aspiration
+	Mikazuki: "I'm sorry then, that I could not live up to that hope."
+You are struck with a motherly sense of crafting the girl with your own hands and dedication.
+you: ...
+- Hug her
+- Shake your head
+- Hug the sheep
+Mikazuki: "Whatever side you take, take this."
+"Thank you, creator."
+The girl walks across the quaint field towards the quaint house, disintegrating along the way.

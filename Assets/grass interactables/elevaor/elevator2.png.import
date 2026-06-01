@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7mgohtqiu3c0"
-path="res://.godot/imported/stopsign.png-e5d41a22e6b15858e38c7b8c1f0ec1b8.ctex"
+uid="uid://bntwupd0il7ql"
+path="res://.godot/imported/elevator2.png-e8bf3bd3c739978f1088b914fd872b1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/interactable stufs/stopsign.png"
-dest_files=["res://.godot/imported/stopsign.png-e5d41a22e6b15858e38c7b8c1f0ec1b8.ctex"]
+source_file="res://Assets/grass interactables/elevaor/elevator2.png"
+dest_files=["res://.godot/imported/elevator2.png-e8bf3bd3c739978f1088b914fd872b1e.ctex"]
 
 [params]
 

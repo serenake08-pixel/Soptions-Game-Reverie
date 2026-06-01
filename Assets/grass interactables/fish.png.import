@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2b2rqara4v6u"
-path="res://.godot/imported/sheep1.png-93297ff4d07bd672f625bc647f652e33.ctex"
+uid="uid://cxamovvcec8lh"
+path="res://.godot/imported/fish.png-0907c59d79c7fae283925dc674daedc0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/interactable stufs/sheep1.png"
-dest_files=["res://.godot/imported/sheep1.png-93297ff4d07bd672f625bc647f652e33.ctex"]
+source_file="res://Assets/grass interactables/fish.png"
+dest_files=["res://.godot/imported/fish.png-0907c59d79c7fae283925dc674daedc0.ctex"]
 
 [params]
 

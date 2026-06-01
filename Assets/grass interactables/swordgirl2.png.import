@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4hotboy762es"
-path="res://.godot/imported/sheep3.png-cb092ae72ff6dff4fefe1a8799ed93ba.ctex"
+uid="uid://b3ldcpqafoxi1"
+path="res://.godot/imported/swordgirl2.png-194e69d6357a4c72e7dd9672eb43e2c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/interactable stufs/sheep3.png"
-dest_files=["res://.godot/imported/sheep3.png-cb092ae72ff6dff4fefe1a8799ed93ba.ctex"]
+source_file="res://Assets/grass interactables/swordgirl2.png"
+dest_files=["res://.godot/imported/swordgirl2.png-194e69d6357a4c72e7dd9672eb43e2c9.ctex"]
 
 [params]
 
