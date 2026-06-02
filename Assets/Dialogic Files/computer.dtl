@@ -1,0 +1,6 @@
+A dusty rusty musty crusty computer. And yet, it looks very inviting.
+Turn it on?
+- Yes
+	[signal arg="minigame"]
+- No
+	[end_timeline]

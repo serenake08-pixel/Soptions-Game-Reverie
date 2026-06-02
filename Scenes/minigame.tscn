@@ -2,5 +2,20 @@
 
 [ext_resource type="Script" uid="uid://x6iu0d2r2klk" path="res://Scenes/minigame.gd" id="1_ij8rg"]
 
-[node name="MiniMain" type="Node2D" unique_id=398771383]
+[node name="MiniMain" type="CanvasLayer" unique_id=1059214371]
+layer = 15
 script = ExtResource("1_ij8rg")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1133071551]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 40
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer" unique_id=1795744820]
+layout_mode = 2

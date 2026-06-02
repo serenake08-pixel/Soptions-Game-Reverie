@@ -35,6 +35,7 @@ directories/dtl_directory={
 "MikazukiMeet": "res://Assets/Dialogic Files/MikazukiMeet.dtl",
 "cave": "res://Assets/Dialogic Files/cave.dtl",
 "collectable_found": "res://Assets/Dialogic Files/collectable_found.dtl",
+"computer": "res://Assets/Dialogic Files/computer.dtl",
 "manmer_notfoundyet": "res://Assets/Dialogic Files/manmer_notfoundyet.dtl",
 "manmertalktest": "res://Assets/Dialogic Files/manmertalktest.dtl",
 "sheep": "res://Assets/Dialogic Files/sheep.dtl"
