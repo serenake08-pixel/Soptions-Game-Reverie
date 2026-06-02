@@ -5,7 +5,6 @@
 [node name="Node2D" type="Sprite2D" unique_id=1774154770]
 scale = Vector2(0.05, 0.05)
 script = ExtResource("1_5d6ol")
-itemName = null
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1416121586]
 collision_layer = 4

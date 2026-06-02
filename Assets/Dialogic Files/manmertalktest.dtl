@@ -23,6 +23,7 @@ if {metFish} == true:
 		you: A memory resurfaces in your mind...
 		you: You feel strangely calm. You want to thank him but can’t find the words to.
 		[end_timeline]
+A really long A really long A really long A really long A really long A really long A really long A really long
 Manmer: ...
 you: He seems sad.
 Manmer: My life is DOOMED! i’m letting everyone down..
@@ -52,7 +53,7 @@ Manmer: I must also search for my resume.
 - Good luck with that.
 	Manmer: You’ll help me, won’t you?
 	Manmer: Don’t look at me like that.
-	Manmer: Ever since i was a child i wanted to be an investment banker. you’ll help me achieve my dreams, won’t you?
+	Manmer: Ever since I was a child I wanted to be an investment banker. you’ll help me achieve my dreams, won’t you?
 	you: Okay then.
 	Manmer: I’m afraid the tall grass is hiding my resume from me. go give it a look, will you?
 set {metFish} = true

@@ -1,0 +1,6 @@
+if {metMikazuki} == true:
+	You try stepping in the cramped cave...
+	[signal arg="house"]
+else:
+	This cave is super small! It looks like it is just big enough to squeeze in.
+	Even if you wanted to go in, you can't - there's some sort of magical barrier...

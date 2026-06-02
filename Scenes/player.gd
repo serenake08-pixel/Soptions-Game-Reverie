@@ -9,6 +9,8 @@ var disabled = false
 func _ready() -> void:
 	$Area2D.area_entered.connect(_on_area_entered)
 	$Area2D.area_exited.connect(_on_area_exited)
+	Dialogic.timeline_started.connect(func(): disabled = true)
+	Dialogic.timeline_ended.connect(func(): disabled = false)
 
 	
 func _on_area_entered(area: Node2D) -> void:
@@ -42,7 +44,8 @@ func closestBody() -> Node2D:
 	return closest
 
 func _physics_process(delta: float) -> void:
-	if disabled or Dialogic.current_timeline != null:
+	if  disabled || str(Dialogic.current_timeline) == "[DialogicTimeline:]":
+		#TODO: there are two ending siganls being claled and player only moves after hte second late one.
 		return
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

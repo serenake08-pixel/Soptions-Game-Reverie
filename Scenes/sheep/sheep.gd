@@ -9,7 +9,9 @@ func _ready() -> void:
 	super()
 	speed = rng.randi_range(50, 150)
 	$AnimatedSprite2D.flip_h = bool(randi() % 2)
-
+	
+func interact() -> void:
+	startDialogue("res://Assets/Dialogic Files/sheep.dtl")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:

@@ -49,10 +49,10 @@ enum NameLabelColorModes {GLOBAL_COLOR, CHARACTER_COLOR, CUSTOM_COLOR}
 @export var portrait_bg_modulate: Color = Color(0, 0, 0, 0.5137255191803)
 
 func _ready() -> void:
-	Dialogic.Text.speaker_updated.connect(_on_text_displaying)
+	Dialogic.Text.about_to_show_text.connect(_on_text_displaying)
 
-func _on_text_displaying(character: DialogicCharacter) -> void:
-	if character == null:
+func _on_text_displaying(info:Dictionary) -> void:
+	if info.get("character") == null:
 		print("textbox without portrait")
 		%PortraitPanel.hide()
 	else:

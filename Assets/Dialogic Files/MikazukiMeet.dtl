@@ -4,11 +4,13 @@ Curiously, you recognize her instantly.
 - Thanks for saving me!
 - You have my respect
 - *Shake your head*
-	You shake your head in disbelief, awed by her presence.
-The girl nods. She unsheathes her sword and points it into the distance.
-Instantly you understand she is inviting you to a meal, with not a single word more than necessary.
+	you: You shake your head in disbelief, awed by her presence.
+The girl nods. She motions for you to wait.
+[background arg="#000000ff" fade="0.0"]
 [wait time="1.0"]
-As you dig into some delicious lamb chops, the girl excuses herself to gather food for supper.
+[background fade="0.0"]
+set {metMikazuki} = true
+As you dig into some delicious lamb chops, the girl excuses herself to gather more food.
 All alone, something tugs at your heartstrings as you recall her past\:
 A poor child, forsaken and sold by her parents to the royal family.
 And yet, her courage was how she climbed the ranks to become the Imperial Shogun...

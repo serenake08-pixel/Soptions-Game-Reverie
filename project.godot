@@ -21,19 +21,23 @@ run/layer_1="World"
 [autoload]
 
 Dialogic="*uid://ds2q0uclmolvu"
+Global="*uid://cw1a6xv2kis2f"
 
 [dialogic]
 
 directories/dch_directory={
 "Manmer": "res://Assets/Dialogic Files/Manmer.dch",
 "Mikazuki": "res://Assets/Dialogic Files/Mikazuki.dch",
+"Sheep": "res://Assets/Dialogic Files/Sheep.dch",
 "you": "res://Assets/Dialogic Files/you.dch"
 }
 directories/dtl_directory={
 "MikazukiMeet": "res://Assets/Dialogic Files/MikazukiMeet.dtl",
+"cave": "res://Assets/Dialogic Files/cave.dtl",
 "collectable_found": "res://Assets/Dialogic Files/collectable_found.dtl",
 "manmer_notfoundyet": "res://Assets/Dialogic Files/manmer_notfoundyet.dtl",
-"manmertalktest": "res://Assets/Dialogic Files/manmertalktest.dtl"
+"manmertalktest": "res://Assets/Dialogic Files/manmertalktest.dtl",
+"sheep": "res://Assets/Dialogic Files/sheep.dtl"
 }
 layout/style_directory={
 "": "res://Assets/Dialogic Files/dialogboxtest.tres",
@@ -47,6 +51,7 @@ variables={
 },
 "collectable": "nothing?",
 "metFish": false,
+"metMikazuki": false,
 "rng": -1
 }
 glossary/default_case_sensitive=true

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://duvt8sttnu45i"]
+
+[node name="Transition" type="Node2D" unique_id=512861247]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1932142450]
+color = Color(0, 0, 0, 1)
