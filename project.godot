@@ -51,7 +51,7 @@ variables={
 },
 "collectable": "nothing?",
 "metFish": false,
-"metMikazuki": false,
+"metMikazuki": true,
 "rng": -1
 }
 glossary/default_case_sensitive=true

@@ -267,7 +267,7 @@ collision_mask = 1
 position = Vector2(102, -582)
 
 [node name="Cave" parent="." unique_id=1105865130 instance=ExtResource("18_ee4r6")]
-position = Vector2(-342, -353)
+position = Vector2(-26, -23)
 scale = Vector2(0.05, 0.05)
 script = ExtResource("19_3pmx8")
 

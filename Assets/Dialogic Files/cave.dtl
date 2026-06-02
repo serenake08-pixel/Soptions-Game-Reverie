@@ -1,5 +1,7 @@
 if {metMikazuki} == true:
 	You try stepping in the cramped cave...
+	[background scene="res://Scenes/Transition.tscn" fade="0.0"]
+	[wait time="1.0"]
 	[signal arg="house"]
 else:
 	This cave is super small! It looks like it is just big enough to squeeze in.

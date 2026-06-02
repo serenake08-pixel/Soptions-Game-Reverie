@@ -10,7 +10,7 @@ func interact() -> void:
 	print("interaction started")
 	startDialogue("res://Assets/Dialogic Files/cave.dtl")
 
-func _on_house() -> void:
+func _on_house(_argument) -> void:
 	get_tree().change_scene_to_file("res://Scenes/house.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

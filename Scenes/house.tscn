@@ -4,9 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://dptmmsxivyken" path="res://Assets/Background Stuff/wallfinalfinal.png" id="2_obbqb"]
 [ext_resource type="Texture2D" uid="uid://cs6w5mts2ghyk" path="res://Assets/Background Stuff/wallfhdjjs.png" id="3_kjvky"]
 [ext_resource type="Texture2D" uid="uid://0ybusd1lyckj" path="res://Assets/Background Stuff/rug.png" id="4_0l6dv"]
-[ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="5_k3v7f"]
 [ext_resource type="PackedScene" uid="uid://bubp5ft6dg0oa" path="res://Scenes/Mikazuki.tscn" id="6_q8yd6"]
 [ext_resource type="Texture2D" uid="uid://qxud86ttj5e" path="res://Assets/Background Stuff/sword collectiondarker.png" id="7_fl8vv"]
+[ext_resource type="PackedScene" uid="uid://c21ylvion3xme" path="res://Scenes/player.tscn" id="7_l3jqw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3jqw"]
+texture = ExtResource("3_kjvky")
+texture_region_size = Vector2i(28, 28)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14, -14, 14, -14, 14, 14, -14, 14)
+
+[sub_resource type="TileSet" id="TileSet_gau5j"]
+tile_size = Vector2i(28, 28)
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_l3jqw")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_umavc"]
 texture = ExtResource("1_2y50f")
@@ -17,15 +29,21 @@ texture_region_size = Vector2i(112, 112)
 texture = ExtResource("2_obbqb")
 texture_region_size = Vector2i(112, 112)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-56, -56, 56, -56, 56, 56, -56, 56)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-56, -56, 56, -56, 56, 56, -56, 56)
 0:3/next_alternative_id = 4
 0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(48.823387, -56, 48.823387, 56, 56, 56, 56, -56)
 0:3/1 = 1
 0:3/1/flip_h = true
+0:3/1/physics_layer_0/polygon_0/points = PackedVector2Array(-56, -56, -47.300003, -56, -46.750008, 56, -56, 56)
 0:3/2 = 2
 0:3/2/flip_v = true
 0:3/2/transpose = true
+0:3/2/physics_layer_0/polygon_0/points = PackedVector2Array(-56, -56, 56, -56, 56, -46.199997, -56, -46.199997)
 0:3/3 = 3
+0:3/3/physics_layer_0/polygon_0/points = PackedVector2Array(48.751564, -56, 56, -56, 56, 56, 48.399994, 56)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qj8ql"]
 texture = ExtResource("3_kjvky")
@@ -33,20 +51,11 @@ texture_region_size = Vector2i(112, 112)
 
 [sub_resource type="TileSet" id="TileSet_11uyb"]
 tile_size = Vector2i(112, 112)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
 sources/1 = SubResource("TileSetAtlasSource_umavc")
 sources/7 = SubResource("TileSetAtlasSource_qj8ql")
 sources/11 = SubResource("TileSetAtlasSource_shbcp")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgaom"]
-texture = ExtResource("4_0l6dv")
-texture_region_size = Vector2i(656, 448)
-0:1/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_4wfvm"]
-tile_size = Vector2i(20, 20)
-sources/0 = SubResource("TileSetAtlasSource_cgaom")
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_c55dp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1xqxo"]
 texture = ExtResource("7_fl8vv")
@@ -57,29 +66,44 @@ texture_region_size = Vector2i(700, 600)
 tile_size = Vector2i(100, 100)
 sources/1 = SubResource("TileSetAtlasSource_1xqxo")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgaom"]
+texture = ExtResource("4_0l6dv")
+texture_region_size = Vector2i(656, 448)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4wfvm"]
+tile_size = Vector2i(20, 20)
+sources/0 = SubResource("TileSetAtlasSource_cgaom")
+
 [node name="Node2D" type="Node2D" unique_id=737421140]
+y_sort_enabled = true
+
+[node name="wallscollision" type="TileMapLayer" parent="." unique_id=2108537313]
+tile_map_data = PackedByteArray("AAAAAP3/AAAJAAMAAAABAP3/AAAJAAMAAAACAP3/AAAJAAMAAAADAP3/AAAJAAMAAAAEAP3/AAAJAAMAAAAFAP3/AAAJAAMAAAAGAP7/AAAJAAMAAAAGAP//AAAJAAMAAAAHAAAAAAAJAAMAAAAHAAEAAAAJAAMAAAAHAAIAAAAJAAMAAAAHAAMAAAAJAAMAAAAGAAMAAAAJAAMAAAAFAAMAAAAJAAMAAAAEAAMAAAAJAAMAAAADAAMAAAAJAAMAAAACAAMAAAAJAAMAAAABAAMAAAAJAAMAAAAAAAMAAAAJAAMAAAD//wMAAAAJAAMAAAD//wIAAAAJAAMAAAD//wEAAAAJAAMAAAD//wAAAAAJAAMAAAD/////AAAJAAMAAAD///7/AAAJAAMAAAD///3/AAAJAAMAAAA=")
+tile_set = SubResource("TileSet_gau5j")
 
 [node name="insideofhouse" type="TileMapLayer" parent="." unique_id=1192998153]
+z_index = -1
+scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAAAAP//AQAAAAAAAAAAAAIAAQAAAAAAAAACAAIAAQAAAAAAAAABAAIAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAAFAP//AQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAAAP7/AQAAAAAAAAABAP7/AQAAAAAAAAACAP7/AQAAAAAAAAADAP7/AQAAAAAAAAAEAP7/AQAAAAAAAAAFAP7/AQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAAAPz/CwAAAAEAAAABAPz/CwAAAAEAAAACAPz/CwAAAAEAAAADAPz/CwAAAAEAAAAEAPz/CwAAAAEAAAAFAPz/CwAAAAEAAAAGAP7/CwAAAAEAAAAAAP3/CwAAAAIAAAABAP3/CwAAAAIAAAACAP3/CwAAAAIAAAADAP3/CwAAAAIAAAAEAP3/CwAAAAIAAAAFAP3/CwAAAAIAAAAGAP//CwAAAAIAAAD///z/CwAAAAMAAAD//wAACwAAAAMAAAD///7/CwAAAAMAAAD///3/CwAAAAMAAAD/////CwAAAAMAAAD//wEACwAAAAMAAAD//wIACwAAAAMAAAAGAPz/CwAAAAMAAQAGAP3/CwAAAAMAAQAHAP7/CwAAAAMAAQAHAP//CwAAAAMAAQAHAAAACwAAAAMAAQAHAAEACwAAAAMAAQAHAAIACwAAAAMAAQAGAAMACwAAAAMAAgAFAAMACwAAAAMAAgAEAAMACwAAAAMAAgADAAMACwAAAAMAAgACAAMACwAAAAMAAgABAAMACwAAAAMAAgAAAAMACwAAAAMAAgA=")
 tile_set = SubResource("TileSet_11uyb")
 
-[node name="rug" type="TileMapLayer" parent="." unique_id=2096059045]
-scale = Vector2(0.7, 0.7)
-tile_map_data = PackedByteArray("AAAbAAkAAAAAAAEAAAA=")
-tile_set = SubResource("TileSet_4wfvm")
-
-[node name="StaticBody2D" parent="." unique_id=1800712132 instance=ExtResource("5_k3v7f")]
-
-[node name="AnimatedSprite2D" parent="StaticBody2D" index="1" unique_id=590266681]
-sprite_frames = SubResource("SpriteFrames_c55dp")
-
-[node name="StaticBody2D2" parent="." unique_id=992794922 instance=ExtResource("6_q8yd6")]
-position = Vector2(155, -132)
-scale = Vector2(5, 5)
-
 [node name="swords" type="TileMapLayer" parent="." unique_id=345264154]
-scale = Vector2(0.3, 0.3)
+position = Vector2(-1.1920929e-07, 0)
+scale = Vector2(0.074999996, 0.074999996)
 tile_map_data = PackedByteArray("AAAKAPX/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_kf312")
 
-[editable path="StaticBody2D"]
+[node name="rug" type="TileMapLayer" parent="." unique_id=2096059045]
+scale = Vector2(0.175, 0.175)
+tile_map_data = PackedByteArray("AAAbAAkAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_4wfvm")
+
+[node name="Mikazuki" parent="." unique_id=992794922 instance=ExtResource("6_q8yd6")]
+position = Vector2(46, 1.9999943)
+scale = Vector2(1.25, 1.25)
+
+[node name="Player" parent="." unique_id=406447972 instance=ExtResource("7_l3jqw")]
+position = Vector2(21, 17)
+
+[editable path="Mikazuki"]

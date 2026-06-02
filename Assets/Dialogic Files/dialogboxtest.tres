@@ -48,6 +48,10 @@ overrides = {
 script = ExtResource("2_f3lrr")
 scene = ExtResource("6_5tq1k")
 
+[sub_resource type="Resource" id="Resource_f3lrr"]
+script = ExtResource("2_f3lrr")
+scene = ExtResource("10_f3lrr")
+
 [sub_resource type="Resource" id="Resource_4dpdj"]
 script = ExtResource("2_f3lrr")
 scene = ExtResource("8_cg4s8")
@@ -79,10 +83,6 @@ overrides = {
 "text_color_pressed": "Color(0.27539063, 0.22706616, 0.20815659, 1)",
 "text_color_use_global": "false"
 }
-
-[sub_resource type="Resource" id="Resource_f3lrr"]
-script = ExtResource("2_f3lrr")
-scene = ExtResource("10_f3lrr")
 
 [resource]
 script = ExtResource("10_egpui")
