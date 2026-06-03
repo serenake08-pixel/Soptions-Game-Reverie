@@ -12,14 +12,17 @@ func _ready() -> void:
 func _on_computer_minigame() -> void:
 	if minigameInstance == null:
 		minigameInstance = minigame.instantiate()
-		self.add_child(minigameInstance)
-		print("child added? " + str(minigameInstance))
+		get_tree().root.add_child(minigameInstance)
+		print("Instantiated node name: ", minigameInstance.name)
+		minigameInstance.show()
 		$Player.disabled = true
 	else:
 		minigameInstance.queue_free()
+		minigameInstance = null
 		$Player.disabled = false
 	
-	
+func _inMinigame() -> bool:
+	return !minigameInstance == null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

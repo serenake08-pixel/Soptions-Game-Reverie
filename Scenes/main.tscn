@@ -212,6 +212,7 @@ radius = 160.0
 height = 480.0
 
 [node name="Main" type="Node2D" unique_id=416959181]
+top_level = true
 y_sort_enabled = true
 script = ExtResource("1_hptm8")
 
@@ -264,7 +265,7 @@ position = Vector2(22, 3)
 collision_mask = 1
 
 [node name="Computer" parent="." unique_id=1731291614 instance=ExtResource("8_344ge")]
-position = Vector2(102, -582)
+position = Vector2(4, -30)
 
 [node name="Cave" parent="." unique_id=1105865130 instance=ExtResource("18_ee4r6")]
 position = Vector2(-26, -23)
