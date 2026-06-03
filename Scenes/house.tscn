@@ -3,10 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://clb1ti3fqbux1" path="res://Assets/Background Stuff/girlfloor_walls.png" id="1_2y50f"]
 [ext_resource type="Texture2D" uid="uid://dptmmsxivyken" path="res://Assets/Background Stuff/wallfinalfinal.png" id="2_obbqb"]
 [ext_resource type="Texture2D" uid="uid://cs6w5mts2ghyk" path="res://Assets/Background Stuff/wallfhdjjs.png" id="3_kjvky"]
-[ext_resource type="Texture2D" uid="uid://0ybusd1lyckj" path="res://Assets/Background Stuff/rug.png" id="4_0l6dv"]
+[ext_resource type="Texture2D" uid="uid://gn8pdx1u63op" path="res://Assets/Background Stuff/largerug.png" id="5_lmwq5"]
 [ext_resource type="PackedScene" uid="uid://bubp5ft6dg0oa" path="res://Scenes/Mikazuki.tscn" id="6_q8yd6"]
 [ext_resource type="Texture2D" uid="uid://qxud86ttj5e" path="res://Assets/Background Stuff/sword collectiondarker.png" id="7_fl8vv"]
 [ext_resource type="PackedScene" uid="uid://c21ylvion3xme" path="res://Scenes/player.tscn" id="7_l3jqw"]
+[ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="8_x4svt"]
+[ext_resource type="Texture2D" uid="uid://dyvll2k0beim" path="res://Assets/Background Stuff/chair.png" id="9_ttg8n"]
+[ext_resource type="Texture2D" uid="uid://c1qg6hs8bui85" path="res://Assets/Background Stuff/bonsaitable.png" id="10_0h1dt"]
+[ext_resource type="Texture2D" uid="uid://dm01bshhds5nu" path="res://Assets/Background Stuff/table.png" id="11_x4svt"]
+[ext_resource type="Texture2D" uid="uid://tcythy4q8nsm" path="res://Assets/Background Stuff/bookshelf.png" id="12_ttg8n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l3jqw"]
 texture = ExtResource("3_kjvky")
@@ -66,14 +71,67 @@ texture_region_size = Vector2i(700, 600)
 tile_size = Vector2i(100, 100)
 sources/1 = SubResource("TileSetAtlasSource_1xqxo")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cgaom"]
-texture = ExtResource("4_0l6dv")
-texture_region_size = Vector2i(656, 448)
-0:1/0 = 0
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_karln"]
+texture = ExtResource("5_lmwq5")
+texture_region_size = Vector2i(896, 672)
+0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_4wfvm"]
 tile_size = Vector2i(20, 20)
-sources/0 = SubResource("TileSetAtlasSource_cgaom")
+sources/1 = SubResource("TileSetAtlasSource_karln")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j14gn"]
+size = Vector2(15, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tj63m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_ttg8n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dwi4"]
+size = Vector2(21, 28)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gslo5"]
+texture = ExtResource("10_0h1dt")
+texture_region_size = Vector2i(112, 282)
+0:2/0 = 0
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-31.725113, 7.716919, 35.15486, 6.0020447, 35.15486, 6.0020447, 36.869736, 86.60098, 36.869736, 124.328156, -33.439987, 122.61328)
+
+[sub_resource type="TileSet" id="TileSet_a7v5j"]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_gslo5")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ttg8n"]
+texture = ExtResource("11_x4svt")
+texture_region_size = Vector2i(112, 500)
+0:0/0 = 0
+0:0/0/z_index = -1
+0:0/0/y_sort_origin = 100
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45.012005, 98.25201, 45.012, 97.284004, 45.012, 242.48401, -43.076004, 242.48401)
+
+[sub_resource type="TileSet" id="TileSet_0h1dt"]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 2
+sources/0 = SubResource("TileSetAtlasSource_ttg8n")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0h1dt"]
+texture = ExtResource("12_ttg8n")
+texture_region_size = Vector2i(500, 672)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(175.53719, 334.87604, -249.58678, 334.87604, -245.89268, -235.97195, 179.28198, -237.38919)
+
+[sub_resource type="TileSet" id="TileSet_karln"]
+physics_layer_0/collision_layer = 4
+physics_layer_0/collision_mask = 2
+sources/1 = SubResource("TileSetAtlasSource_0h1dt")
 
 [node name="Node2D" type="Node2D" unique_id=737421140]
 y_sort_enabled = true
@@ -83,20 +141,23 @@ tile_map_data = PackedByteArray("AAAAAP3/AAAJAAMAAAABAP3/AAAJAAMAAAACAP3/AAAJAAM
 tile_set = SubResource("TileSet_gau5j")
 
 [node name="insideofhouse" type="TileMapLayer" parent="." unique_id=1192998153]
-z_index = -1
+z_index = -5
 scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAAAAAEAAQAAAAAAAAABAAEAAQAAAAAAAAACAAEAAQAAAAAAAAACAAAAAQAAAAAAAAADAAAAAQAAAAAAAAADAAEAAQAAAAAAAAAEAAAAAQAAAAAAAAAEAAEAAQAAAAAAAAAEAP//AQAAAAAAAAADAP//AQAAAAAAAAACAP//AQAAAAAAAAABAP//AQAAAAAAAAAAAP//AQAAAAAAAAAAAAIAAQAAAAAAAAACAAIAAQAAAAAAAAABAAIAAQAAAAAAAAADAAIAAQAAAAAAAAAEAAIAAQAAAAAAAAAFAP//AQAAAAAAAAAFAAAAAQAAAAAAAAAFAAEAAQAAAAAAAAAFAAIAAQAAAAAAAAAAAP7/AQAAAAAAAAABAP7/AQAAAAAAAAACAP7/AQAAAAAAAAADAP7/AQAAAAAAAAAEAP7/AQAAAAAAAAAFAP7/AQAAAAAAAAAGAAAAAQAAAAAAAAAGAAEAAQAAAAAAAAAGAAIAAQAAAAAAAAAAAPz/CwAAAAEAAAABAPz/CwAAAAEAAAACAPz/CwAAAAEAAAADAPz/CwAAAAEAAAAEAPz/CwAAAAEAAAAFAPz/CwAAAAEAAAAGAP7/CwAAAAEAAAAAAP3/CwAAAAIAAAABAP3/CwAAAAIAAAACAP3/CwAAAAIAAAADAP3/CwAAAAIAAAAEAP3/CwAAAAIAAAAFAP3/CwAAAAIAAAAGAP//CwAAAAIAAAD///z/CwAAAAMAAAD//wAACwAAAAMAAAD///7/CwAAAAMAAAD///3/CwAAAAMAAAD/////CwAAAAMAAAD//wEACwAAAAMAAAD//wIACwAAAAMAAAAGAPz/CwAAAAMAAQAGAP3/CwAAAAMAAQAHAP7/CwAAAAMAAQAHAP//CwAAAAMAAQAHAAAACwAAAAMAAQAHAAEACwAAAAMAAQAHAAIACwAAAAMAAQAGAAMACwAAAAMAAgAFAAMACwAAAAMAAgAEAAMACwAAAAMAAgADAAMACwAAAAMAAgACAAMACwAAAAMAAgABAAMACwAAAAMAAgAAAAMACwAAAAMAAgA=")
 tile_set = SubResource("TileSet_11uyb")
 
 [node name="swords" type="TileMapLayer" parent="." unique_id=345264154]
 position = Vector2(-1.1920929e-07, 0)
-scale = Vector2(0.074999996, 0.074999996)
-tile_map_data = PackedByteArray("AAAKAPX/AQAAAAAAAAA=")
+scale = Vector2(0.05, 0.05)
+tile_map_data = PackedByteArray("AAAdAO//AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_kf312")
 
 [node name="rug" type="TileMapLayer" parent="." unique_id=2096059045]
-scale = Vector2(0.175, 0.175)
-tile_map_data = PackedByteArray("AAAbAAkAAAAAAAEAAAA=")
+z_index = -2
+y_sort_enabled = true
+position = Vector2(0, 2)
+scale = Vector2(0.13, 0.13)
+tile_map_data = PackedByteArray("AAAbAAkAAAAAAAEAAAAnAAwAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_4wfvm")
 
 [node name="Mikazuki" parent="." unique_id=992794922 instance=ExtResource("6_q8yd6")]
@@ -106,4 +167,40 @@ scale = Vector2(1.25, 1.25)
 [node name="Player" parent="." unique_id=406447972 instance=ExtResource("7_l3jqw")]
 position = Vector2(21, 17)
 
+[node name="chair" parent="." unique_id=1800712132 instance=ExtResource("8_x4svt")]
+y_sort_enabled = true
+position = Vector2(38, 43)
+
+[node name="CollisionShape2D" parent="chair" index="0" unique_id=1692417395]
+position = Vector2(5.5, 9.5)
+shape = SubResource("RectangleShape2D_j14gn")
+
+[node name="AnimatedSprite2D" parent="chair" index="1" unique_id=590266681]
+position = Vector2(-22.000002, 9.000001)
+scale = Vector2(0.053, 0.053)
+sprite_frames = SubResource("SpriteFrames_tj63m")
+offset = Vector2(511.11115, -130.00003)
+
+[node name="CollisionShape2D" parent="chair/Area2D" parent_id_path=PackedInt32Array(1800712132, 2043122016) index="0" unique_id=1743143849]
+position = Vector2(6, 2)
+shape = SubResource("RectangleShape2D_4dwi4")
+
+[node name="tree" type="TileMapLayer" parent="." unique_id=1431770256]
+z_index = -1
+scale = Vector2(0.25, 0.25)
+tile_map_data = PackedByteArray("AAAtAPr/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_a7v5j")
+
+[node name="table" type="TileMapLayer" parent="." unique_id=607511433]
+scale = Vector2(0.25, 0.25)
+tile_map_data = PackedByteArray("AAAQAAMAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_0h1dt")
+y_sort_origin = 80
+
+[node name="shelf" type="TileMapLayer" parent="." unique_id=2011968830]
+scale = Vector2(0.1, 0.1)
+tile_map_data = PackedByteArray("AAAQANH/AQAAAAAAAAA=")
+tile_set = SubResource("TileSet_karln")
+
 [editable path="Mikazuki"]
+[editable path="chair"]
