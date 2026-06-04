@@ -1,26 +1,15 @@
 extends CharacterBody2D
 
 var overlapping = []
-const defaultSpeed = 100
+const defaultSpeed = 40
 const sprintSpeed = 200
 var speed = defaultSpeed
 var disabled = false
-var reversed = false
+
 
 func _ready() -> void:
-	reversed = Dialogic.VAR.reverse
 	$Area2D.area_entered.connect(_on_area_entered)
 	$Area2D.area_exited.connect(_on_area_exited)
-	Dialogic.timeline_started.connect(func(): disabled = true)
-	Dialogic.timeline_ended.connect(_timeline_end)
-	Dialogic.signal_event.connect(_on_dialogic_signal)
-
-
-func _timeline_end() -> void:
-	if get_parent().has_method("_inMinigame") and get_parent()._inMinigame():
-		return
-	else:
-		disabled = false
 
 	
 func _on_area_entered(area: Node2D) -> void:
@@ -30,36 +19,16 @@ func _on_area_entered(area: Node2D) -> void:
 	
 func _on_area_exited(area: Node2D) -> void:
 	var body = area.get_parent()
-	if (!overlapping.has(body)):
-		push_error("So... a body exited without entering if my calculations are correct.")
 	overlapping.erase(body)
 	print("exited" + body.name) 
 
-func _unhandled_input(event):
-	if event.is_action_pressed("interact"):
-		if closestBody() != null && Dialogic.current_timeline == null && !disabled:
-			closestBody().interact()
-		pass
-		
-func closestBody() -> Node2D:
-	if overlapping.is_empty():
-		return null
-	var closest = overlapping[0]
-	var closestDist = self.global_position.distance_to(closest.global_position)
-	for body in overlapping:
-		var dist = self.global_position.distance_to(body.global_position)
-		if dist < closestDist:
-			closestDist = dist
-			closest = body
-	return closest
 
 func _physics_process(delta: float) -> void:
 	if disabled:
-		if $AnimatedSprite2D.animation != null:
-			$AnimatedSprite2D.stop()
 		return
 		#TODO: there are two ending siganls being claled and player only moves after hte second late one.
-		
+	
+	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Vector2.ZERO
@@ -67,9 +36,6 @@ func _physics_process(delta: float) -> void:
 	direction.y = Input.get_axis("walkUp", "walkDown")
 	direction = direction.normalized()
 	
-	if reversed:
-		direction *= -1
-
 	if direction.length() > 0:
 		direction = direction.normalized() * speed
 		$AnimatedSprite2D.play()
@@ -92,13 +58,6 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.animation = "walkRight"
 	elif direction.x < 0:
 		$AnimatedSprite2D.animation = "walkLeft"
-	
-	
+
 	velocity = direction
 	move_and_slide()
-
-func _on_dialogic_signal(argument) -> void:
-	if argument is String and argument == "player_reverse":
-		reversed = Dialogic.VAR.reverse
-	if argument is String and argument == "player_normal":
-		reversed = Dialogic.VAR.reverse

@@ -10,6 +10,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var dist = self.global_position.distance_to(%Player.global_position)
+	#print($AnimatedSprite2D.animation)
 	if dist < 200 and $AnimatedSprite2D.animation == "idle":
 		$AnimatedSprite2D.play("open")
 	elif dist < 10 and %Player.global_position.y > self.global_position.y:

@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cmenute2uanat"]
 
 [ext_resource type="Texture2D" uid="uid://clb1ti3fqbux1" path="res://Assets/Background Stuff/girlfloor_walls.png" id="1_2y50f"]
+[ext_resource type="Script" uid="uid://bq6btni10d2nr" path="res://Scenes/house.gd" id="1_karln"]
 [ext_resource type="Texture2D" uid="uid://dptmmsxivyken" path="res://Assets/Background Stuff/wallfinalfinal.png" id="2_obbqb"]
 [ext_resource type="Texture2D" uid="uid://cs6w5mts2ghyk" path="res://Assets/Background Stuff/wallfhdjjs.png" id="3_kjvky"]
 [ext_resource type="Texture2D" uid="uid://gn8pdx1u63op" path="res://Assets/Background Stuff/largerug.png" id="5_lmwq5"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://qxud86ttj5e" path="res://Assets/Background Stuff/sword collectiondarker.png" id="7_fl8vv"]
 [ext_resource type="PackedScene" uid="uid://c21ylvion3xme" path="res://Scenes/player.tscn" id="7_l3jqw"]
 [ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="8_x4svt"]
+[ext_resource type="Script" uid="uid://bsgnqtq2umxhj" path="res://Scenes/chair.gd" id="9_0h1dt"]
 [ext_resource type="Texture2D" uid="uid://dyvll2k0beim" path="res://Assets/Background Stuff/chair.png" id="9_ttg8n"]
 [ext_resource type="Texture2D" uid="uid://c1qg6hs8bui85" path="res://Assets/Background Stuff/bonsaitable.png" id="10_0h1dt"]
 [ext_resource type="Texture2D" uid="uid://dm01bshhds5nu" path="res://Assets/Background Stuff/table.png" id="11_x4svt"]
@@ -81,7 +83,7 @@ tile_size = Vector2i(20, 20)
 sources/1 = SubResource("TileSetAtlasSource_karln")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j14gn"]
-size = Vector2(15, 11)
+size = Vector2(19, 10)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tj63m"]
 animations = [{
@@ -113,7 +115,6 @@ sources/0 = SubResource("TileSetAtlasSource_gslo5")
 texture = ExtResource("11_x4svt")
 texture_region_size = Vector2i(112, 500)
 0:0/0 = 0
-0:0/0/z_index = -1
 0:0/0/y_sort_origin = 100
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-45.012005, 98.25201, 45.012, 97.284004, 45.012, 242.48401, -43.076004, 242.48401)
 
@@ -135,6 +136,7 @@ sources/1 = SubResource("TileSetAtlasSource_0h1dt")
 
 [node name="Node2D" type="Node2D" unique_id=737421140]
 y_sort_enabled = true
+script = ExtResource("1_karln")
 
 [node name="wallscollision" type="TileMapLayer" parent="." unique_id=2108537313]
 tile_map_data = PackedByteArray("AAAAAP3/AAAJAAMAAAABAP3/AAAJAAMAAAACAP3/AAAJAAMAAAADAP3/AAAJAAMAAAAEAP3/AAAJAAMAAAAFAP3/AAAJAAMAAAAGAP7/AAAJAAMAAAAGAP//AAAJAAMAAAAHAAAAAAAJAAMAAAAHAAEAAAAJAAMAAAAHAAIAAAAJAAMAAAAHAAMAAAAJAAMAAAAGAAMAAAAJAAMAAAAFAAMAAAAJAAMAAAAEAAMAAAAJAAMAAAADAAMAAAAJAAMAAAACAAMAAAAJAAMAAAABAAMAAAAJAAMAAAAAAAMAAAAJAAMAAAD//wMAAAAJAAMAAAD//wIAAAAJAAMAAAD//wEAAAAJAAMAAAD//wAAAAAJAAMAAAD/////AAAJAAMAAAD///7/AAAJAAMAAAD///3/AAAJAAMAAAA=")
@@ -170,9 +172,10 @@ position = Vector2(21, 17)
 [node name="chair" parent="." unique_id=1800712132 instance=ExtResource("8_x4svt")]
 y_sort_enabled = true
 position = Vector2(38, 43)
+script = ExtResource("9_0h1dt")
 
 [node name="CollisionShape2D" parent="chair" index="0" unique_id=1692417395]
-position = Vector2(5.5, 9.5)
+position = Vector2(5.5, 11)
 shape = SubResource("RectangleShape2D_j14gn")
 
 [node name="AnimatedSprite2D" parent="chair" index="1" unique_id=590266681]
@@ -192,12 +195,14 @@ tile_map_data = PackedByteArray("AAAtAPr/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_a7v5j")
 
 [node name="table" type="TileMapLayer" parent="." unique_id=607511433]
+y_sort_enabled = true
 scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AAAQAAMAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_0h1dt")
-y_sort_origin = 80
+y_sort_origin = 100
 
 [node name="shelf" type="TileMapLayer" parent="." unique_id=2011968830]
+z_index = -1
 scale = Vector2(0.1, 0.1)
 tile_map_data = PackedByteArray("AAAQANH/AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_karln")

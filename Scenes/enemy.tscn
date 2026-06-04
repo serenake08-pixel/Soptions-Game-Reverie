@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cn8hgfqn651b"]
+
+[ext_resource type="Script" uid="uid://b233si2tptbkc" path="res://enemy.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://ctt8v4rgdjl3s" path="res://Assets/spritesheet.png" id="2_afpow"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_287tu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_afpow")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="enemy" type="CharacterBody2D" unique_id=1343614075]
+script = ExtResource("1_1f0kj")
+
+[node name="RayCastUP" type="RayCast2D" parent="." unique_id=2016642474]
+target_position = Vector2(0, -8)
+collision_mask = 32
+
+[node name="RayCastDOWN" type="RayCast2D" parent="." unique_id=162219221]
+target_position = Vector2(0, 8)
+collision_mask = 32
+
+[node name="RayCastLEFT" type="RayCast2D" parent="." unique_id=1543317723]
+target_position = Vector2(-8, 0)
+collision_mask = 32
+
+[node name="RayCastRIGHT" type="RayCast2D" parent="." unique_id=967192726]
+target_position = Vector2(8, 0)
+collision_mask = 32
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=866890469]
+position = Vector2(0, -1)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_287tu")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1984875593]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=999518702]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=618762901]

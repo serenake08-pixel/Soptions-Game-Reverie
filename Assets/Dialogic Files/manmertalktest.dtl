@@ -4,26 +4,33 @@ if {metFish} == true:
 		Manmer: Hey, have you found my resume yet? it should be in the tall grass.
 		[end_timeline]
 	else:
-		you: Here it is!
-		Manmer: Holy m*ckeral.
-		He holds up the resume and admires it.
-		Manmer: I shouldn’t swear around children.
-		Manmer: I thank you from the bottom of my heart!
-		Manmer: I’m going to go eat tiramisu to celebrate.
-		you: That’s my favorite dessert, too.
-		Manmer: Aren’t we are all the same in the grand scheme of things?
-		Manmer: Though the future is uncertain, you must always have faith in yourself.
-		He looks deep in thought.
-		Manmer: When I was little, I had a bad fall on my bicycle.
-		Manmer: I broke my leg. It took weeks and weeks to heal.
-		Manmer: Alone on the hospital bed, I felt that my leg would be like that forever.
-		Manmer: But it healed. Everything requires time, young one.
-		Manmer: Thanks for helping a trout out. I’m indebted to you.
-		[signal arg_type="dict" arg="{"memory":"res://Assets/pictures/manmer_memory.tres"}"]
-		you: A memory resurfaces in your mind...
-		you: You feel strangely calm. You want to thank him but can’t find the words to.
-		[end_timeline]
-A really long A really long A really long A really long A really long A really long A really long A really long
+		if {finishedFish} == true:
+			Manmer: Thanks again old chap...now I can get back to perparing for my interview.
+			Manmer: He starts muttering to himself.
+			Manmer: ...Hm... yes, that's a good question. I believe I'm the perfect tuna-can didate for this job because I...
+			you: You decide to let him practice in peace.
+			[end_timeline]
+		else:
+			you: Here it is!
+			Manmer: Holy m*ckeral.
+			He holds up the resume and admires it.
+			Manmer: I shouldn’t swear around children.
+			Manmer: I thank you from the bottom of my heart!
+			Manmer: I’m going to go eat tiramisu to celebrate.
+			you: That’s my favorite dessert, too.
+			Manmer: Aren’t we are all the same in the grand scheme of things?
+			Manmer: Though the future is uncertain, you must always have faith in yourself.
+			He looks deep in thought.
+			Manmer: When I was little, I had a bad fall on my bicycle.
+			Manmer: I broke my leg. It took weeks and weeks to heal.
+			Manmer: Alone on the hospital bed, I felt that my leg would be like that forever.
+			Manmer: But it healed. Everything requires time, young one.
+			Manmer: Thanks for helping a trout out. I’m indebted to you.
+			[signal arg_type="dict" arg="{"memory":"res://Assets/pictures/manmer_memory.tres"}"]
+			you: A memory resurfaces in your mind...
+			you: You feel strangely calm. You want to thank him but can’t find the words to.
+			set {finishedFish} = true
+			[end_timeline]
 Manmer: ...
 you: He seems sad.
 Manmer: My life is DOOMED! i’m letting everyone down..
@@ -55,7 +62,7 @@ Manmer: I must also search for my resume.
 	Manmer: Don’t look at me like that.
 	Manmer: Ever since I was a child I wanted to be an investment banker. you’ll help me achieve my dreams, won’t you?
 	you: Okay then.
-	Manmer: I’m afraid the tall grass is hiding my resume from me. go give it a look, will you?
+	Manmer: I’m afraid a patch of TALL GRASS is hiding my resume from me. go give it a look, will you?
 set {metFish} = true
 [signal arg="fishQuest"]
 [end_timeline]

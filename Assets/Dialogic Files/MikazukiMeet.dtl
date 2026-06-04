@@ -5,19 +5,8 @@ Curiously, you recognize her instantly.
 - You have my respect
 - *Shake your head*
 	you: You shake your head in disbelief, awed by her presence.
-The girl nods. She motions for you to wait.
-[background scene="res://Scenes/Transition.tscn" fade="0.0"]
-[wait time="1.0"]
-[background fade="0.0"]
-set {metMikazuki} = true
-As you dig into some delicious lamb chops, the girl excuses herself to gather more food.
-All alone, something tugs at your heartstrings as you recall her past\:
-A poor child, forsaken and sold by her parents to the royal family.
-And yet, her courage was how she climbed the ranks to become the Imperial Shogun...
-...all without harboring a single drop of resentment in her pure heart.
-A deep desire bubbles up, to be a cool sword girl living in this quaint house in a quaint field.
-Suddenly, you realize you forgot your .
-[wait time="1.0"]
+The girl nods in understanding. She motions you to sit down and have some supper at the dinnertable.
+[end_timeline]
 you: Are you...
 - are you shearing the sheep?
 	Mikazuki: She shakes her head.

@@ -1,0 +1,26 @@
+set {rng} = range(0,100).pick_random()
+if {rng} > 50.0:
+	"REVERSE"
+	if {reverse} == false:
+		You start to feel strange, as if something has turned upside down...
+		set {reverse} = true
+		[signal arg="player_reverse"]
+	else:
+		It's the same turning sensation, but you feel better this time!
+		set {reverse} = false
+		[signal arg="player_normal"]
+elif {rng} > 10.0:
+	"GO"
+else:
+	"WAIT {rng} MOMENTS"
+	set {i} = 0
+	label anotherMoment
+	if {i} >= {rng}:
+		jump finishMoments
+	else:
+		...
+		set {i} += 1.0
+		jump anotherMoment
+	label finishMoments
+	{rng} moments have passed, more or less.
+	You are confuzzled.

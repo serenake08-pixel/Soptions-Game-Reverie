@@ -1,0 +1,31 @@
+if {metMikazuki} == true:
+	jump leaveHouse
+if {reverse} == true:
+	The girl seems to notice you walking very oddly. Shaking her head, she gives you a green concoction.
+	1 *GREEN CONCOCTION* obtained!
+	Drink it?
+	- Glug glug glug
+		A turning sensation fills your stomach...
+		When it subsides, you feel much better!
+		set {reverse} = false
+		[signal arg="player_normal"]
+	- Ew no
+		You just cannot bring yourself to do it!
+		You pretend to sip on it instead.
+You sit down for supper...
+[background scene="res://Scenes/Transition.tscn" fade="0.0"]
+[wait time="1.0"]
+As you dig into some delicious lamb chops, the girl leaves.
+All alone, something tugs at your heartstrings as you recall her past, flooding over you like a wave\:
+A poor child, forsaken and sold by her parents to the royal family.
+And yet, her courage was how she climbed the ranks to become the Imperial Shogun...
+...all without harboring a single drop of resentment in her pure heart.
+Oh, to be a cool sword girl living in a quaint house in a quaint field.
+[wait time="1.5"]
+You dutifully finish your supper and prepare to go find the sword girl outside.
+label leaveHouse
+Leave the house?
+- Yes
+	[signal arg="leave_house"]
+- Not yet
+set {metMikazuki} = true

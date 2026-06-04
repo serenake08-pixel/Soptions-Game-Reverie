@@ -43,7 +43,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_levuu")
 }],
-"loop": true,
+"loop": false,
 "name": &"open",
 "speed": 6.0
 }]
@@ -60,7 +60,7 @@ shape = SubResource("RectangleShape2D_le187")
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=590266681]
 position = Vector2(-6, -284)
 sprite_frames = SubResource("SpriteFrames_cf2ye")
-animation = &"idle"
+animation = &"open"
 
 [node name="CollisionShape2D" parent="Area2D" parent_id_path=PackedInt32Array(2043122016) index="0" unique_id=1743143849]
 position = Vector2(2, -282)

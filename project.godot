@@ -36,9 +36,14 @@ directories/dtl_directory={
 "cave": "res://Assets/Dialogic Files/cave.dtl",
 "collectable_found": "res://Assets/Dialogic Files/collectable_found.dtl",
 "computer": "res://Assets/Dialogic Files/computer.dtl",
+"dinner_with_Mikazuki": "res://Assets/Dialogic Files/dinner_with_Mikazuki.dtl",
+"elevator": "res://Assets/Dialogic Files/elevator.dtl",
+"manmer_afterquest": "res://Assets/Dialogic Files/manmer_afterquest.dtl",
 "manmer_notfoundyet": "res://Assets/Dialogic Files/manmer_notfoundyet.dtl",
 "manmertalktest": "res://Assets/Dialogic Files/manmertalktest.dtl",
-"sheep": "res://Assets/Dialogic Files/sheep.dtl"
+"sheep": "res://Assets/Dialogic Files/sheep.dtl",
+"shelf": "res://Assets/Dialogic Files/shelf.dtl",
+"stopsign": "res://Assets/Dialogic Files/stopsign.dtl"
 }
 layout/style_directory={
 "": "res://Assets/Dialogic Files/dialogboxtest.tres",
@@ -50,9 +55,13 @@ variables={
 "Inventory": {
 "RESUME": false
 },
+"NewVar": "",
 "collectable": "nothing?",
+"finishedFish": false,
+"i": 0,
 "metFish": false,
 "metMikazuki": true,
+"reverse": false,
 "rng": -1
 }
 glossary/default_case_sensitive=true
@@ -131,3 +140,5 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_transforms_to_pixel=true
+2d/snap/snap_2d_vertices_to_pixel=true
