@@ -149,4 +149,4 @@ offset = Vector2(0, -200)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=843172809]
 position_smoothing_enabled = true
-position_smoothing_speed = 3.0
+position_smoothing_speed = 8.0
