@@ -6,6 +6,8 @@ var player
 var availableDirections = []
 var pastAvailableDirections = []
 var atIntersection
+const COOLDOWN = 0.4
+var time_since_cooldown = 0
 
 func _ready() -> void:
 	var ray_up = $RayCastUP
@@ -16,6 +18,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
+	time_since_cooldown += delta
 	atIntersection = false
 	availableDirections = []
 	if not $RayCastUP.is_colliding():
@@ -35,11 +38,15 @@ func _physics_process(delta: float) -> void:
 	availableDirections.sort()
 	
 	if pastAvailableDirections.hash() != availableDirections.hash():
-		print("at intersection")
-		print(pastAvailableDirections)
-		print(availableDirections)
-		print()
-		atIntersection = true
+		#at intersection
+		var must_turn = direction == Vector2.ZERO or not availableDirections.has(direction)
+		if must_turn or time_since_cooldown >= COOLDOWN:
+			print("at intersection")
+			print(pastAvailableDirections)
+			print(availableDirections)
+			print()
+			atIntersection = true
+			time_since_cooldown = 0
 	
 	pastAvailableDirections = availableDirections.duplicate()
 		
@@ -48,19 +55,20 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 		return
 	
+	if availableDirections.has(-direction) and availableDirections.size() >=2:
+		#try not to go backwards if given choice not to
+		availableDirections.erase(-direction)
+	
 	#at intersection
 	var playerDirection = player.position - self.position
 	if (playerDirection.length_squared() < 1000 and availableDirections.size() > 0):
 		#player detected
-		if availableDirections.has(direction) and availableDirections.size() >=2:
-			#try not to go backwards if given choice not to
-			availableDirections.erase(direction)
 		var buffer = 10
 		if playerDirection.x > buffer and availableDirections.has(Vector2.RIGHT):
 			direction = Vector2.RIGHT
-		elif playerDirection.x < buffer and availableDirections.has(Vector2.LEFT):
+		elif playerDirection.x < -1*buffer and availableDirections.has(Vector2.LEFT):
 			direction = Vector2.LEFT
-		elif playerDirection.y < buffer and availableDirections.has(Vector2.UP):
+		elif playerDirection.y < -1*buffer and availableDirections.has(Vector2.UP):
 			direction = Vector2.UP
 		elif playerDirection.y > buffer and availableDirections.has(Vector2.DOWN):
 			direction = Vector2.DOWN
