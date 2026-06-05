@@ -15,6 +15,12 @@ func interact() -> void:
 	startDialogue("res://Assets/Dialogic Files/computer.dtl")
 	pass
 
+func interact_quit() -> void:
+	startDialogue("res://Assets/Dialogic Files/computerquit.dtl")
+	
+
+	
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

@@ -36,6 +36,7 @@ directories/dtl_directory={
 "cave": "res://Assets/Dialogic Files/cave.dtl",
 "collectable_found": "res://Assets/Dialogic Files/collectable_found.dtl",
 "computer": "res://Assets/Dialogic Files/computer.dtl",
+"computerquit": "res://Assets/Dialogic Files/computerquit.dtl",
 "dinner_with_Mikazuki": "res://Assets/Dialogic Files/dinner_with_Mikazuki.dtl",
 "elevator": "res://Assets/Dialogic Files/elevator.dtl",
 "manmer_afterquest": "res://Assets/Dialogic Files/manmer_afterquest.dtl",
@@ -140,5 +141,6 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 2d/snap/snap_2d_transforms_to_pixel=true
 2d/snap/snap_2d_vertices_to_pixel=true

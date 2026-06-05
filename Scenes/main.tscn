@@ -318,5 +318,6 @@ position = Vector2(5.820766e-11, 0.00030517578)
 shape = SubResource("CapsuleShape2D_hibaj")
 
 [editable path="elevator"]
+[editable path="Player"]
 [editable path="Cave"]
 [editable path="RESUME"]

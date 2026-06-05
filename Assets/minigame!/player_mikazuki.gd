@@ -1,26 +1,30 @@
 extends CharacterBody2D
 
-var overlapping = []
 const defaultSpeed = 40
-const sprintSpeed = 200
 var speed = defaultSpeed
-var disabled = false
+var disabled = true
+var health = 3
 
 
 func _ready() -> void:
-	$Area2D.area_entered.connect(_on_area_entered)
-	$Area2D.area_exited.connect(_on_area_exited)
+	get_parent().game.connect(_on_game)
+	$Hurtbox.area_entered.connect(_on_hurtbox_entered)
+	$Hitbox.area_entered.connect(_on_hitbox_entered)
 
+func _on_game(argument) -> void:
+	disabled = !argument
+	pass
 	
-func _on_area_entered(area: Node2D) -> void:
-	var body = area.get_parent()
-	overlapping.append(body)
-	print("entered " + body.name)
+func _on_hurtbox_entered(area: Node2D) -> void:
+	health -= 1
+	print("health lost! " + str(health))
+	%HealthBar.value = health
+	if health == 0:
+		pass
 	
-func _on_area_exited(area: Node2D) -> void:
-	var body = area.get_parent()
-	overlapping.erase(body)
-	print("exited" + body.name) 
+func _on_hitbox_entered(area: Node2D) -> void:
+	pass
+	
 
 
 func _physics_process(delta: float) -> void:

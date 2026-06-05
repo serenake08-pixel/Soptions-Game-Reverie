@@ -18,23 +18,23 @@ animations = [{
 script = ExtResource("1_1f0kj")
 
 [node name="RayCastUP" type="RayCast2D" parent="." unique_id=2016642474]
-target_position = Vector2(0, -6)
+target_position = Vector2(0, -6.272)
 collision_mask = 32
 
 [node name="RayCastDOWN" type="RayCast2D" parent="." unique_id=162219221]
-target_position = Vector2(0, 6)
+target_position = Vector2(0, 6.272)
 collision_mask = 32
 
 [node name="RayCastLEFT" type="RayCast2D" parent="." unique_id=1543317723]
-target_position = Vector2(-6, 0)
+target_position = Vector2(-6.272, 0)
 collision_mask = 32
 
 [node name="RayCastRIGHT" type="RayCast2D" parent="." unique_id=967192726]
-target_position = Vector2(6, 0)
+target_position = Vector2(6.272, 0)
 collision_mask = 32
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=866890469]
-position = Vector2(0, -1)
+position = Vector2(0, -3.5527137e-15)
 scale = Vector2(0.05, 0.05)
 sprite_frames = SubResource("SpriteFrames_287tu")
 animation = &"idle"

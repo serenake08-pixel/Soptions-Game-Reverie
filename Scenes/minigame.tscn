@@ -1,31 +1,46 @@
 [gd_scene format=4 uid="uid://dwxxkql6jlkov"]
 
 [ext_resource type="Script" uid="uid://x6iu0d2r2klk" path="res://Scenes/minigame.gd" id="1_ij8rg"]
+[ext_resource type="Texture2D" uid="uid://bmvh323wxputg" path="res://Assets/minigame!/mazeInstructions.png" id="2_hr1fu"]
 [ext_resource type="Texture2D" uid="uid://c6m0g4fdu1pw3" path="res://Assets/minigame!/mazeTest.png" id="4_id8w1"]
 [ext_resource type="SpriteFrames" uid="uid://osc0xjqv16x5" path="res://Scenes/player_frames.tres" id="4_iqey4"]
 [ext_resource type="PackedScene" uid="uid://cn8hgfqn651b" path="res://Scenes/enemy.tscn" id="5_iqey4"]
 [ext_resource type="Texture2D" uid="uid://oc2n4so43jme" path="res://Assets/minigame!/computerEffect.png" id="5_yx24v"]
 [ext_resource type="Texture2D" uid="uid://c4mjo41sfuw7h" path="res://Assets/minigame!/image-removebg-preview.png" id="6_id8w1"]
 [ext_resource type="Shader" uid="uid://c08k8yn865kti" path="res://Scenes/CRT.gdshader" id="8_255i5"]
+[ext_resource type="Script" uid="uid://bqqb3ne33b87i" path="res://enemy_wgridsystem.gd" id="8_xcq3l"]
+[ext_resource type="FontFile" uid="uid://0ib1v6m51vdm" path="res://Resources/fonts/NFPixels-Regular.ttf" id="10_vnlq7"]
 [ext_resource type="Script" uid="uid://jaqbfn4rmm0u" path="res://Assets/minigame!/player_mikazuki.gd" id="17_lx35w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eicgb"]
+atlas = ExtResource("2_hr1fu")
+region = Rect2(135.21872, 361.4071, 518.6654, 353.9167)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puep3"]
+atlas = ExtResource("2_hr1fu")
+region = Rect2(285.83133, 745.9089, 156.13565, 52.283997)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hr1fu"]
+atlas = ExtResource("2_hr1fu")
+region = Rect2(285.8255, 829.23413, 155.41943, 51.209656)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xcq3l"]
 shader = ExtResource("8_255i5")
 shader_parameter/resolution = Vector2(320, 180)
-shader_parameter/scan_line_amount = 0.5
-shader_parameter/warp_amount = 0.05
+shader_parameter/scan_line_amount = 0.322000015295
+shader_parameter/warp_amount = 0.070000003325
 shader_parameter/vignette_amount = 0.5
 shader_parameter/vignette_intensity = 0.3
-shader_parameter/grille_amount = 0.05
+shader_parameter/grille_amount = 0.3200000152
 shader_parameter/brightness_boost = 1.2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xt64r"]
-radius = 33.333496
+radius = 66.66699
 height = 199.99951
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iqey4"]
-radius = 33.333252
-height = 66.666504
+radius = 99.5
+height = 266.6665
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iqey4"]
 texture = ExtResource("4_id8w1")
@@ -101,21 +116,53 @@ texture_region_size = Vector2i(112, 112)
 tile_size = Vector2i(112, 112)
 sources/0 = SubResource("TileSetAtlasSource_255i5")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vnlq7"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_yx24v"]
 atlas = ExtResource("4_id8w1")
 region = Rect2(138.69623, 381.64667, 25.217163, 5.39917)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hr1fu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eicgb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_puep3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pg0ql"]
+
 [node name="MiniMain" type="CanvasLayer" unique_id=1059214371]
 layer = 15
 script = ExtResource("1_ij8rg")
+
+[node name="Instructions" type="TextureRect" parent="." unique_id=69955570]
+visible = false
+z_index = 1
+offset_left = 137.0
+offset_top = 55.0
+offset_right = 655.0
+offset_bottom = 408.0
+scale = Vector2(0.4, 0.4)
+texture = SubResource("AtlasTexture_eicgb")
+
+[node name="TextureButton" type="TextureButton" parent="Instructions" unique_id=1918412287]
+z_index = 2
+layout_mode = 0
+offset_left = 392.49997
+offset_top = 294.99997
+offset_right = 573.5
+offset_bottom = 364.0
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_puep3")
+texture_hover = SubResource("AtlasTexture_hr1fu")
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=81933383]
 z_index = 1
 material = SubResource("ShaderMaterial_xcq3l")
 offset_left = 123.5
 offset_top = 55.0
-offset_right = 363.0
-offset_bottom = 201.0
+offset_right = 362.0
+offset_bottom = 202.0
+mouse_filter = 2
 color = Color(0, 0.7176912, 0.7195866, 1)
 
 [node name="Mikazuki_player" type="CharacterBody2D" parent="." unique_id=182376032]
@@ -127,21 +174,28 @@ collision_mask = 96
 script = ExtResource("17_lx35w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Mikazuki_player" unique_id=1298672326]
+position = Vector2(0, -66.666916)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CapsuleShape2D_xt64r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Mikazuki_player" unique_id=1648739398]
-position = Vector2(0, -33.333076)
+position = Vector2(0, -33.333584)
 sprite_frames = ExtResource("4_iqey4")
 animation = &"walkUp"
 
-[node name="Area2D" type="Area2D" parent="Mikazuki_player" unique_id=902816211]
+[node name="Hurtbox" type="Area2D" parent="Mikazuki_player" unique_id=902816211]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Mikazuki_player/Area2D" unique_id=20671989]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mikazuki_player/Hurtbox" unique_id=20671989]
 position = Vector2(0, -33.333588)
 shape = SubResource("CapsuleShape2D_iqey4")
 
+[node name="Hitbox" type="Area2D" parent="Mikazuki_player" unique_id=1968711220]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mikazuki_player/Hitbox" unique_id=1011907375]
+position = Vector2(0, -33.333588)
+
 [node name="Maze" type="TileMapLayer" parent="." unique_id=1334991907]
+unique_name_in_owner = true
 position = Vector2(124, 57)
 scale = Vector2(0.0245, 0.0245)
 tile_map_data = PackedByteArray("AAABAAEAAgABAAAAAAACAAEAAgAAAAAAAQADAAEAAgAAAAAAAQAEAAEAAgAAAAAAAQAFAAEAAgAAAAAAAQAGAAEAAgAAAAAAAQAHAAEAAgAAAAAAAQAIAAEAAgAAAAAAAQAJAAEAAgAAAAAAAQAKAAEAAgAAAAAAAQALAAEAAgAAAAAAAQAMAAEAAgAAAAAAAQAPAAEAAgAAAAAAAQAQAAEAAgAAAAAAAQARAAEAAgAAAAAAAQASAAEAAgAAAAAAAQATAAEAAgAAAAAAAQAUAAEAAgACAAAAAwAVAAEAAgAAAAAAAQAWAAEAAgAAAAAAAQAXAAEAAgACAAAAAwAYAAEAAgAAAAAAAQAZAAEAAgAAAAAAAQAaAAEAAgAAAAAAAQAbAAEAAgACAAAAAwAcAAEAAgAAAAAAAQAdAAEAAgAAAAAAAQAeAAEAAgAAAAAAAQAfAAEAAgAAAAAAAQAgAAEAAgAAAAAAAQAhAAEAAgAAAAAAAQABAAIAAgAAAAAAAAABAAMAAgAAAAAAAAABAAQAAgAAAAAAAAABAAUAAgAAAAAAAAABAAYAAgAAAAAAAAABAAcAAgAAAAAAAAABAAgAAgAAAAAAAAABAAoAAgAAAAAAAAABAAsAAgAAAAAAAAABAAwAAgAAAAAAAAABAA0AAgACAAAAAAABAA8AAgACAAAAAAABABAAAgAAAAAAAAABABEAAgAAAAAAAAABABIAAgAAAAAAAAABABMAAgAAAAAAAAACAAkAAgAAAAAAAQADAAkAAgAAAAAAAQAEAAkAAgAAAAEABwAEAAcAAgAAAAAAAQADAAcAAgABAAAAAgADAAYAAgAAAAAAAAADAAUAAgACAAAAAAADAAQAAgAAAAAAAAADAAMAAgABAAAAAAAEAAMAAgAAAAAAAQAFAAMAAgAAAAAAAQAGAAMAAgAAAAAAAQAHAAMAAgAAAAAAAQAIAAMAAgAAAAAAAQAJAAMAAgACAAAAAwAJAAQAAgAAAAAAAAAJAAUAAgAAAAAAAAAJAAYAAgAAAAAAAAABABQAAgAAAAAAAAABABUAAgABAAAAAgACABUAAgAAAAAAAQAjABUAAgAAAAAAAQADABUAAgAAAAAAAQAEABUAAgAAAAAAAQAFABUAAgAAAAAAAQAGABUAAgAAAAAAAQAHABUAAgAAAAAAAQAIABUAAgAAAAAAAQAJABUAAgAAAAAAAQAKABUAAgAAAAAAAQALABUAAgAAAAAAAQAMABUAAgAAAAAAAQANABUAAgAAAAAAAQAOABUAAgAAAAAAAQAPABUAAgAAAAAAAQAQABUAAgAAAAAAAQARABUAAgAAAAAAAQASABUAAgAAAAAAAQATABUAAgAAAAAAAQAUABUAAgAAAAAAAQAVABUAAgAAAAAAAQAWABUAAgAAAAAAAQAXABUAAgAAAAAAAQAYABUAAgAAAAAAAQAZABUAAgAAAAAAAQAaABUAAgAAAAAAAQAbABUAAgAAAAAAAQAcABUAAgAAAAAAAQAdABUAAgAAAAAAAQAeABUAAgAAAAAAAQAfABUAAgAAAAAAAQAgABUAAgAAAAAAAQAhABUAAgAAAAAAAQAiABUAAgAAAAAAAQAkABUAAgABAAAAAwAkABQAAgAAAAAAAAAkABMAAgAAAAAAAAAkABIAAgAAAAAAAAAkABEAAgAAAAAAAAAkABAAAgAAAAAAAAAkAA8AAgAAAAAAAAAkAA4AAgAAAAAAAAAkAA0AAgAAAAAAAAAkAAwAAgAAAAAAAAAkAAsAAgAAAAAAAAAkAAoAAgAAAAAAAAAkAAkAAgAAAAAAAAAkAAgAAgAAAAAAAAAkAAcAAgAAAAAAAAAkAAYAAgAAAAAAAAAkAAUAAgAAAAAAAAAkAAQAAgAAAAAAAAAkAAMAAgAAAAAAAAAkAAIAAgAAAAAAAAAkAAEAAgABAAAAAQAiAAEAAgAAAAAAAQAjAAEAAgAAAAAAAQAKAAMAAgAAAAAAAQALAAMAAgAAAAEABwABAAkAAgACAAAAAAAGAAcAAgABAAAAAQAFAAcAAgAAAAAAAQAGAAgAAgAAAAAAAAAGAAkAAgAAAAAAAAAGAAoAAgAAAAAAAAAEAAUAAgAAAAAAAQAGAAUAAgAAAAAAAQAFAAUAAgAAAAAAAQAHAAUAAgAAAAEABwAFAAsAAgAAAAAAAQAEAAsAAgAAAAAAAQAGAAsAAgACAAAAAgAKAA4AAgAAAAAAAAAKAA0AAgACAAAAAQAKAAwAAgAAAAAAAAAKAAsAAgAAAAAAAAAKAAoAAgABAAAAAAAIAAsAAgABAAAAAwADAAsAAgAAAAAAAQAHAAsAAgAAAAAAAQACAA0AAgAAAAAAAQADAA0AAgAAAAAAAQAEAA0AAgAAAAAAAQAFAA0AAgAAAAAAAQAGAA0AAgAAAAAAAQAHAA0AAgAAAAAAAQAIAA0AAgAAAAAAAQAJAA0AAgAAAAAAAQABAA4AAgAAAAAAAAALAAUAAgABAAAAAAAMAAUAAgABAAAAAQAMAAYAAgABAAAAAwALAAYAAgABAAAAAgAJAAcAAgAAAAAAAAAJAAgAAgABAAAAAgANAAEAAgAAAAAAAQAIAAoAAgAAAAEABAAKAAgAAgAAAAAAAQALAAgAAgAAAAAAAQAMAAgAAgAAAAAAAQAOAAMAAgAAAAEABAAOAAQAAgAAAAAAAAAOAAUAAgAAAAAAAAAOAAYAAgABAAAAAgAPAAYAAgAAAAAAAQANAAgAAgABAAAAAQALAAoAAgABAAAAAQAKAA8AAgABAAAAAgALAA8AAgACAAAAAQALAA4AAgAAAAAAAAALAA0AAgAAAAAAAAALAAwAAgAAAAAAAAALAAsAAgAAAAAAAAANAAkAAgAAAAAAAAANAAoAAgAAAAAAAAANAAsAAgAAAAAAAAANAAwAAgAAAAAAAAALABAAAgAAAAAAAAANAA0AAgABAAAAAgAQAAgAAgAAAAAAAQAPAAgAAgAAAAEAAAAPAAoAAgAAAAEAAAAQAAoAAgACAAAAAwARAAgAAgAAAAAAAQASAAgAAgAAAAEABwARAAoAAgAAAAAAAQASAAoAAgAAAAEABwAQAAYAAgABAAAAAwAQAAUAAgAAAAAAAAAQAAQAAgAAAAAAAAAQAAMAAgABAAAAAAARAAMAAgAAAAAAAQASAAMAAgABAAAAAQASAAQAAgAAAAAAAAASAAUAAgAAAAAAAAASAAYAAgABAAAAAgAUAAYAAgABAAAAAQATAAYAAgAAAAAAAQAUAAcAAgAAAAAAAAAUAAgAAgAAAAAAAAAUAAoAAgAAAAAAAAAUAAkAAgAAAAAAAAAOAA0AAgABAAAAAQAQAA0AAgACAAAAAAARAA0AAgABAAAAAwARAAwAAgABAAAAAAASAAwAAgABAAAAAQASAA0AAgABAAAAAgAQAA4AAgABAAAAAgATAA0AAgABAAAAAQAUAAsAAgABAAAAAgAVAAsAAgABAAAAAQATAA4AAgABAAAAAwASAA4AAgABAAAAAAARAA4AAgABAAAAAQASAA8AAgABAAAAAwARAA8AAgABAAAAAgAEAA8AAgABAAAAAAAFAA8AAgAAAAAAAQAGAA8AAgAAAAAAAQAHAA8AAgABAAAAAQACAA8AAgAAAAEABwAEABAAAgAAAAAAAAAEABEAAgABAAAAAwADABEAAgABAAAAAAADABIAAgAAAAAAAAADABMAAgABAAAAAgAEABMAAgAAAAAAAQAFABMAAgAAAAAAAQAGABMAAgAAAAAAAQAHABMAAgABAAAAAwAHABIAAgACAAAAAAAIABIAAgAAAAAAAQAHABAAAgAAAAAAAAAHABEAAgAAAAAAAAAGABIAAgABAAAAAwAFABIAAgABAAAAAgAGABEAAgABAAAAAQAFABEAAgABAAAAAAAOAAEAAgAAAAAAAQAUAAIAAgAAAAAAAAAUAAMAAgAAAAAAAAAUAAQAAgABAAAAAgAVAAQAAgABAAAAAwAVAAMAAgABAAAAAAAWAAMAAgABAAAAAwAWAAIAAgABAAAAAAAXAAIAAgABAAAAAwAXAAUAAgABAAAAAAAZAAQAAgABAAAAAQAZAAUAAgAAAAAAAAAZAAYAAgAAAAAAAAAZAAcAAgAAAAAAAAAZAAkAAgAAAAAAAAAZAAgAAgAAAAAAAAAbAAIAAgAAAAAAAAAbAAMAAgAAAAAAAAAbAAQAAgAAAAAAAAAbAAUAAgAAAAAAAAAbAAYAAgAAAAAAAAAbAAcAAgAAAAAAAAAbAAgAAgAAAAAAAAAbAAkAAgAAAAAAAAAbAAoAAgAAAAAAAAAbAAsAAgAAAAAAAAAbAAwAAgAAAAAAAAAbAA0AAgAAAAAAAAAbAA4AAgAAAAAAAAAZAAoAAgAAAAAAAAAZAAsAAgAAAAAAAAAZAAwAAgAAAAAAAAAZAA0AAgABAAAAAwAWAAYAAgABAAAAAAAXAAYAAgACAAAAAQAXAAcAAgAAAAAAAAAXAAgAAgABAAAAAwAWAAgAAgACAAAAAAAWAAkAAgABAAAAAgAXAAkAAgABAAAAAQAXAAoAAgAAAAAAAAAXAAsAAgAAAAAAAAAXAAwAAgAAAAAAAAAXAA0AAgABAAAAAgAYAA0AAgAAAAAAAQAOAA4AAgAAAAAAAAAOAA8AAgABAAAAAwAaAA8AAgAAAAAAAQAbAA8AAgABAAAAAwAZAA8AAgAAAAAAAQAYAA8AAgAAAAAAAQAXAA8AAgAAAAAAAQAWAA8AAgAAAAAAAQAVAA8AAgABAAAAAAAVABAAAgAAAAAAAAAVABEAAgAAAAAAAQAVABIAAgAAAAAAAAAVABMAAgAAAAAAAQAVABQAAgAAAAAAAAAUABEAAgAAAAAAAQATABEAAgAAAAAAAQASABEAAgAAAAAAAQARABEAAgAAAAAAAQAQABEAAgAAAAAAAQAPABEAAgAAAAAAAQAUABMAAgAAAAAAAQATABMAAgAAAAAAAQASABMAAgAAAAAAAQARABMAAgAAAAAAAQAQABMAAgAAAAAAAQAPABMAAgAAAAAAAQAWAAcAAgAAAAAAAAAYAAUAAgABAAAAAwAYAAQAAgABAAAAAAAQAAsAAgACAAAAAQAQAAwAAgACAAAAAQA=")
@@ -150,13 +204,17 @@ tile_set = SubResource("TileSet_7hunx")
 [node name="Effects" type="TileMapLayer" parent="." unique_id=1273205363]
 position = Vector2(214.00002, 92.00001)
 scale = Vector2(0.33, 0.33)
-tile_map_data = PackedByteArray("AAADAAIAAAADAAMAAAACAAIAAAACAAMAAAD9/wIAAAABAAMAAQADAP//AAAAAAMAAQACAP//AAAAAAMAAAA=")
+tile_map_data = PackedByteArray("AAADAAIAAAADAAMAAAACAAIAAAACAAMAAAADAP//AAAAAAMAAQACAP//AAAAAAMAAAA=")
 tile_set = SubResource("TileSet_xcq3l")
 
 [node name="enemy" parent="." unique_id=1343614075 instance=ExtResource("5_iqey4")]
-position = Vector2(140, 74)
+position = Vector2(140, 85)
 collision_layer = 64
 collision_mask = 160
+script = ExtResource("8_xcq3l")
+
+[node name="CollisionShape2D" parent="enemy/Area2D" parent_id_path=PackedInt32Array(1343614075, 999518702) index="0" unique_id=618762901]
+shape = SubResource("CircleShape2D_vnlq7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=468701008]
 
@@ -176,6 +234,7 @@ offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.7, 0.7)
+mouse_filter = 2
 theme_override_constants/margin_left = 75
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 75
@@ -183,17 +242,62 @@ theme_override_constants/margin_bottom = 40
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/MarginContainer" unique_id=1795744820]
 layout_mode = 2
+mouse_filter = 2
 color = Color(0.20784314, 0.21960784, 1, 1)
 
-[node name="ProgressBar" type="TextureProgressBar" parent="CanvasLayer/MarginContainer/ColorRect" unique_id=191000265]
+[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/MarginContainer/ColorRect" unique_id=191000265]
+unique_name_in_owner = true
 layout_mode = 0
-offset_left = 40.0
-offset_top = 4.0
-offset_right = 65.0
-offset_bottom = 9.0
+offset_left = 56.42857
+offset_top = 7.142858
+offset_right = 81.42857
+offset_bottom = 12.1428585
+scale = Vector2(1.6857142, 1.0144401)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+max_value = 3.0
+value = 3.0
 texture_under = SubResource("AtlasTexture_yx24v")
+texture_progress = SubResource("AtlasTexture_yx24v")
+tint_under = Color(1, 1, 1, 0.30980393)
+
+[node name="HealthLabel" type="Label" parent="CanvasLayer/MarginContainer/ColorRect" unique_id=1036398338]
+layout_mode = 0
+offset_left = 16.42857
+offset_top = 1.4285715
+offset_right = 56.42857
+offset_bottom = 24.428572
+theme_override_colors/font_color = Color(0.6431373, 0.9882353, 1, 1)
+theme_override_fonts/font = ExtResource("10_vnlq7")
+theme_override_font_sizes/font_size = 12
+text = "Health"
+
+[node name="LevelLabel" type="Label" parent="CanvasLayer/MarginContainer/ColorRect" unique_id=1617849353]
+layout_mode = 0
+offset_left = 103.571434
+offset_top = 1.4285715
+offset_right = 143.57144
+offset_bottom = 24.428572
+theme_override_colors/font_color = Color(0.6431373, 0.9882353, 1, 1)
+theme_override_fonts/font = ExtResource("10_vnlq7")
+theme_override_font_sizes/font_size = 12
+text = "Lv. 1"
+
+[node name="QUIT" type="Button" parent="CanvasLayer/MarginContainer/ColorRect" unique_id=414009054]
+layout_mode = 0
+offset_left = 286.42856
+offset_top = -2.8571427
+offset_right = 326.42856
+offset_bottom = 20.142857
+theme_override_colors/font_color = Color(0.6431373, 0.9882353, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 0.9490196, 0.9490196, 1)
+theme_override_fonts/font = ExtResource("10_vnlq7")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hr1fu")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eicgb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_puep3")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_pg0ql")
+text = "QUIT"
 
 [node name="Shadow" type="ColorRect" parent="CanvasLayer" unique_id=2065481864]
 z_index = -1
@@ -202,4 +306,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.2901961)
+mouse_filter = 2
+color = Color(0, 0, 0, 0.39607844)
+metadata/_edit_lock_ = true
+
+[editable path="enemy"]

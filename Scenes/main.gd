@@ -7,20 +7,35 @@ var minigameInstance: Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Computer.connect("comp_minigame", _on_computer_minigame)
-	pass # Replace with function body.
 
 func _on_computer_minigame() -> void:
 	if minigameInstance == null:
 		minigameInstance = minigame.instantiate()
 		get_tree().root.add_child(minigameInstance)
 		print("Instantiated node name: ", minigameInstance.name)
-		minigameInstance.show()
 		$Player.disabled = true
+		minigameInstance.game.connect(_on_game)
 	else:
-		minigameInstance.queue_free()
-		minigameInstance = null
+		minigameInstance.game.emit(true)
+		$Player.disabled = true
+	minigameInstance.show()
+	minigameInstance.get_node("CanvasLayer").visible = true
+	minigameInstance.set_process(true)
+	minigameInstance.set_physics_process(true)
+	self.process_mode = Node.PROCESS_MODE_ALWAYS
+
+func _on_game(argument) -> void:
+	if !argument:
+		print("exiting game...")
+		minigameInstance.hide()
+		minigameInstance.get_node("CanvasLayer").visible = false
+		minigameInstance.set_process(false)
+		minigameInstance.set_physics_process(false)
+		minigameInstance.process_mode = PROCESS_MODE_DISABLED
+		$Computer.interact_quit()
+		await Dialogic.timeline_ended
 		$Player.disabled = false
-	
+
 func _inMinigame() -> bool:
 	return !minigameInstance == null
 

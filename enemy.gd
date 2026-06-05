@@ -8,6 +8,7 @@ var pastAvailableDirections = []
 var atIntersection
 const COOLDOWN = 0.4
 var time_since_cooldown = 0
+const TILE_SIZE = 256
 
 func _ready() -> void:
 	var ray_up = $RayCastUP
@@ -38,6 +39,7 @@ func _physics_process(delta: float) -> void:
 	availableDirections.sort()
 	
 	if pastAvailableDirections.hash() != availableDirections.hash():
+			
 		#at intersection
 		var must_turn = direction == Vector2.ZERO or not availableDirections.has(direction)
 		if must_turn or time_since_cooldown >= COOLDOWN:
@@ -79,6 +81,9 @@ func _physics_process(delta: float) -> void:
 		direction = pick_random_direction()
 		speed = SPEED
 	
+	
+	# Instead of an instant snap, smoothly blend toward the tile center line
+
 	velocity = speed*direction
 	move_and_slide()
 
