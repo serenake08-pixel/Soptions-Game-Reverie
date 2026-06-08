@@ -250,6 +250,10 @@ frame_progress = 0.26526502
 [node name="Player" parent="." unique_id=406447972 instance=ExtResource("1_bo1nx")]
 unique_name_in_owner = true
 
+[node name="Camera2D" parent="Player" index="4" unique_id=843172809]
+process_callback = 0
+position_smoothing_speed = 3.0
+
 [node name="stopsign" parent="." unique_id=2122974189 instance=ExtResource("3_kry3j")]
 position = Vector2(-87, -28)
 

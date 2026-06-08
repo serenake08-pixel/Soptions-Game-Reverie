@@ -22,18 +22,14 @@ Mikazuki: She closes her eyes.
 Mikazuki: Thus is the way of life.
 [wait time="1.0"]
 Mikazuki: She glaces at you, as if saying, "You were the one who created the soul standing before you now."
-Mikazuki: "In that moment, when your fingertips were pressing those buttons, what were you looking for?"
+Mikazuki: "In that moment, when your pen flowed across the paper, what were you thinking?"
 - An escape
 	Mikazuki: "...Then I am glad I could help you escape, even if only temporarily."
 - A friend
 	Mikazuki: "I am sorry then, that I cannot coexist with your sheep friends in this world..."
 - An aspiration
 	Mikazuki: "I'm sorry then, that I could not live up to that hope."
-You are struck with a motherly sense of crafting the girl with your own hands and dedication.
 you: ...
 - Hug her
 - Shake your head
 - Hug the sheep
-Mikazuki: "Whatever side you take, take this."
-"Thank you, creator."
-The girl walks across the quaint field towards the quaint house, disintegrating along the way.

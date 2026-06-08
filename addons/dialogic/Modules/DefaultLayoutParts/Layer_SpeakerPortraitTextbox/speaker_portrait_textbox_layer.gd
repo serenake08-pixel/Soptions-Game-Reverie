@@ -53,7 +53,7 @@ func _ready() -> void:
 
 func _on_text_displaying(info:Dictionary) -> void:
 	if info.get("character") == null:
-		print("textbox without portrait")
+		#print("textbox without portrait")
 		%PortraitPanel.hide()
 	else:
 		%PortraitPanel.show()

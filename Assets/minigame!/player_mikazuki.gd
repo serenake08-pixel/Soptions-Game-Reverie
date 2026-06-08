@@ -4,6 +4,8 @@ const defaultSpeed = 40
 var speed = defaultSpeed
 var disabled = true
 var health = 3
+var default_pos = Vector2(139,75)
+signal restartLevel
 
 
 func _ready() -> void:
@@ -20,6 +22,7 @@ func _on_hurtbox_entered(area: Node2D) -> void:
 	print("health lost! " + str(health))
 	%HealthBar.value = health
 	if health == 0:
+		restartLevel.emit()
 		pass
 	
 func _on_hitbox_entered(area: Node2D) -> void:

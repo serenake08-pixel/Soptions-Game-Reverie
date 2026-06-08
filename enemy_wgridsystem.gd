@@ -8,6 +8,7 @@ var player
 var maze: TileMapLayer
 var TILE_SIZE = 256
 var disabled = true
+signal enemy_killed
 
 func _ready() -> void:
 	get_parent().game.connect(_on_game)
@@ -17,10 +18,14 @@ func _ready() -> void:
 	global_position = get_tile_center(global_position)
 	target_position = get_tile_center(global_position + TILE_SIZE * direction)
 	player = %Mikazuki_player
+	$Hurtbox.area_entered.connect(_on_hurtbox_entered)
 	
 func _on_game(argument) -> void:
 	disabled = !argument
 	pass
+	
+func _on_hurtbox_entered() -> void:
+	enemy_killed.emit()
 
 func _physics_process(delta: float) -> void:
 	if disabled:
