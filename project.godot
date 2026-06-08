@@ -45,7 +45,8 @@ directories/dtl_directory={
 "manmertalktest": "res://Assets/Dialogic Files/manmertalktest.dtl",
 "sheep": "res://Assets/Dialogic Files/sheep.dtl",
 "shelf": "res://Assets/Dialogic Files/shelf.dtl",
-"stopsign": "res://Assets/Dialogic Files/stopsign.dtl"
+"stopsign": "res://Assets/Dialogic Files/stopsign.dtl",
+"timeline": "res://timeline.dtl"
 }
 layout/style_directory={
 "": "res://Assets/Dialogic Files/dialogboxtest.tres",
