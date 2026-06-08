@@ -8,24 +8,25 @@ var player
 var maze: TileMapLayer
 var TILE_SIZE = 256
 var disabled = true
-signal enemy_killed
+
+func _enter_tree() -> void:
+	maze = get_parent().get_node("Maze")
+	player = get_parent().get_node("Mikazuki_player")
+	
 
 func _ready() -> void:
 	get_parent().game.connect(_on_game)
-	maze = %Maze
 	TILE_SIZE *= maze.scale.x
 	#x and y scales should be same
 	global_position = get_tile_center(global_position)
 	target_position = get_tile_center(global_position + TILE_SIZE * direction)
-	player = %Mikazuki_player
-	$Hurtbox.area_entered.connect(_on_hurtbox_entered)
+
 	
 func _on_game(argument) -> void:
 	disabled = !argument
 	pass
 	
-func _on_hurtbox_entered() -> void:
-	enemy_killed.emit()
+
 
 func _physics_process(delta: float) -> void:
 	if disabled:
@@ -64,7 +65,16 @@ func _physics_process(delta: float) -> void:
 			direction = random_direction(availableDirections)
 	else:
 		direction = random_direction(availableDirections)
-
+	
+	if direction == Vector2.UP:
+		$AnimatedSprite2D.play("up")
+	elif direction == Vector2.DOWN:
+		$AnimatedSprite2D.play("down")
+	if direction == Vector2.LEFT:
+		$AnimatedSprite2D.play("left")
+	elif direction == Vector2.RIGHT:
+		$AnimatedSprite2D.play("right")
+	
 	target_position = get_tile_center(global_position + TILE_SIZE * direction)
 	velocity = speed*direction
 	move_and_slide()

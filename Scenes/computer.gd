@@ -17,9 +17,12 @@ func interact() -> void:
 
 func interact_quit() -> void:
 	startDialogue("res://Assets/Dialogic Files/computerquit.dtl")
-	
 
-	
+func computer_death() -> void:
+	startDialogue("res://Assets/Dialogic Files/computerdeath.dtl")
+
+func monster_cutscene() -> void:
+	startDialogue("res://Assets/Dialogic Files/monster_cutscene.dtl")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
