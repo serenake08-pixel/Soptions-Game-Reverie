@@ -4,6 +4,7 @@ extends Node
 const minigame = preload("res://Scenes/minigame.tscn")
 var minigameInstance: Node
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$Computer.connect("comp_minigame", _on_computer_minigame)
@@ -25,17 +26,27 @@ func _on_computer_minigame() -> void:
 	minigameInstance.set_physics_process(true)
 
 func _on_game(argument) -> void:
+	if minigameInstance.atDeath:
+		$Computer.computer_death()
+		await Dialogic.timeline_ended
+		minigameInstance.queue_free()
+		await get_tree().create_timer(1).timeout
+		$Computer.monster_cutscene()
+		return
 	if !argument:
 		minigameInstance.hide()
 		minigameInstance.get_node("CanvasLayer").visible = false
 		minigameInstance.set_process(false)
 		minigameInstance.set_physics_process(false)
 		minigameInstance.process_mode = PROCESS_MODE_DISABLED
+
 		$Computer.interact_quit()
 		await Dialogic.timeline_ended
 		$Player.disabled = false
 
 func _inMinigame() -> bool:
+	if minigameInstance == null:
+		return false
 	return minigameInstance.process_mode != PROCESS_MODE_DISABLED
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

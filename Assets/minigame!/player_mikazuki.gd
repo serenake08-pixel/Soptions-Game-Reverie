@@ -5,7 +5,9 @@ var speed = defaultSpeed
 var disabled = true
 var health = 3
 var default_pos = Vector2(139,75)
-signal restartLevel
+signal died
+signal finishedLevel
+#TODO finish level signaling
 
 
 func _ready() -> void:
@@ -22,19 +24,16 @@ func _on_hurtbox_entered(area: Node2D) -> void:
 	print("health lost! " + str(health))
 	%HealthBar.value = health
 	if health == 0:
-		restartLevel.emit()
+		died.emit()
 		pass
 	
 func _on_hitbox_entered(area: Node2D) -> void:
 	pass
-	
 
 
 func _physics_process(delta: float) -> void:
 	if disabled:
-		return
-		#TODO: there are two ending siganls being claled and player only moves after hte second late one.
-	
+		return	
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -59,6 +58,7 @@ func _physics_process(delta: float) -> void:
 	
 	if direction.y < 0:
 		$AnimatedSprite2D.animation = "walkUp"
+		#finishedLevel.emit()
 	elif direction.y > 0:
 		$AnimatedSprite2D.animation = "walkDown"
 	elif direction.x > 0:

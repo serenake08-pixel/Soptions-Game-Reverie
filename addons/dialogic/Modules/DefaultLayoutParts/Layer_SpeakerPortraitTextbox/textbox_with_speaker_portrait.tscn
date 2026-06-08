@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://dpv2dfiv5dhmr" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5_sr2qw"]
 
 [node name="TextboxWithSpeakerPortrait" type="Control" unique_id=1669249924]
+visibility_layer = 524288
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

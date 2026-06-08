@@ -1,23 +1,63 @@
 [gd_scene format=3 uid="uid://cn8hgfqn651b"]
 
-[ext_resource type="Script" uid="uid://b233si2tptbkc" path="res://enemy.gd" id="1_1f0kj"]
-[ext_resource type="Texture2D" uid="uid://ctt8v4rgdjl3s" path="res://Assets/spritesheet.png" id="2_afpow"]
+[ext_resource type="Script" uid="uid://bqqb3ne33b87i" path="res://enemy_wgridsystem.gd" id="1_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://bqfkgh8umy6p8" path="res://Assets/minigame!/ghost.png" id="2_1f0kj"]
+[ext_resource type="Texture2D" uid="uid://ha2g6g5yg83t" path="res://Assets/minigame!/ghostDown.png" id="2_ghaa6"]
+[ext_resource type="Texture2D" uid="uid://bnecj8a7cqq1q" path="res://Assets/minigame!/await get_tree().create_timer(1).timeout (1).png" id="4_1dp5w"]
+[ext_resource type="Texture2D" uid="uid://ch0m28alhcyuy" path="res://Assets/minigame!/ghostLR.png" id="5_auwsv"]
+[ext_resource type="Texture2D" uid="uid://cdxvi0o46g1rt" path="res://Assets/minigame!/ghostUp.png" id="6_8uf12"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_287tu"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_afpow")
+"texture": ExtResource("2_ghaa6")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1f0kj")
 }],
 "loop": true,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1dp5w")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_auwsv")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8uf12")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_afpow"]
+radius = 7.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
-radius = 3.1622777
+radius = 8.062258
 
 [node name="enemy" type="CharacterBody2D" unique_id=1343614075]
+scale = Vector2(0.5173212, 0.5173212)
 script = ExtResource("1_1f0kj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=866890469]
@@ -27,6 +67,7 @@ sprite_frames = SubResource("SpriteFrames_287tu")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1984875593]
+shape = SubResource("CircleShape2D_afpow")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=999518702]
 
