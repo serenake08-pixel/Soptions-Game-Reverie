@@ -1,34 +1,53 @@
 The girl's composure screams someone straight out an action movie.
-Curiously, you recognize her instantly.
-- Wow your sword is so cool
+She seems oddly familiar, though you can't put a finger on why
+- Who are you?
+	Mikazuki: I am everything, and I am nothing. I am you, though that you is long gone.
 - Thanks for saving me!
-- You have my respect
+	Mikazuki: A small task. Don't worry about it.
 - *Shake your head*
-	you: You shake your head in disbelief, awed by her presence.
-The girl nods in understanding. She motions you to sit down and have some supper at the dinnertable.
+	You shake your head in disbelief, awed by her presence.
+The girl stares at you.
+Mikazuki: You must be hungry. I'll make some food for you.
+Mikazuki: Come to my house.
+you: Where's your house?
+Mikazuki: 3 Rock Pile Lane.
+Mikazuki: You'll know it when you see it.
 [end_timeline]
 you: Are you...
-- are you shearing the sheep?
-	Mikazuki: She shakes her head.
-	- are you...killing the sheep?
-- are you playing peek-a-boo with the sheep?
-	Mikazuki: She quizzically shakes her head.
-	- are you...killing the sheep?
-- are you basking in the sheep's wool?
-	Mikazuki: She quizzically shakes her head.
-	- are you...killing the sheep?
+- shearing the sheep?
+	She shakes her head.
+	Mikazuki: Don't worry about me. I'll be there in just a moment.
+- playing peek-a-boo with the sheep?
+	Mikazuki: You're a funny one. I'll meet you at my house
+- basking in the sheep's wool?
+	Mikazuki: Their wool is beautiful.
+	Mikazuki: But no.
+[end_timeline]
+Mikazuki: Here it is.
+A fragrant aroma filters through the air.
+You gratefully take a piece of meat from the plate and begin to eat, even though you aren't hungry.
+You can't remember the last time you [i]were[/i] hungry.
+Mikazuki: It's a special recipe. By me.
+you: ...
+You feel like something isn't right.
+you: ...
+you: Is this sheep??
+Mikazuki: Yes.
 you: You...you can't! Those sheep are my friends!
 Mikazuki: She closes her eyes.
-Mikazuki: Thus is the way of life.
+Mikazuki: In order for there to be life, there must also be death.
+Mikazuki: This is the way of life.
+Mikazuki: ...
+Also, they respawn.
 [wait time="1.0"]
-Mikazuki: She glaces at you, as if saying, "You were the one who created the soul standing before you now."
-Mikazuki: "In that moment, when your pen flowed across the paper, what were you thinking?"
+She glaces at you, as if saying, "You were the one who created the soul standing before you now."
+Mikazuki: "In that moment, when your pen flowed across the paper, what were you looking for?"
 - An escape
 	Mikazuki: "...Then I am glad I could help you escape, even if only temporarily."
 - A friend
-	Mikazuki: "I am sorry then, that I cannot coexist with your sheep friends in this world..."
+	Mikazuki: "I am sorry then. It must pain you that I cannot coexist with your sheep friends in this world..."
 - An aspiration
-	Mikazuki: "I'm sorry then, that I could not live up to that hope."
+	Mikazuki: "I'm sorry then, that I cannot live up to that hope."
 you: ...
 - Hug her
 - Shake your head
