@@ -1,7 +1,7 @@
 if {metFish} == true:
 	if {Inventory.RESUME} == false:
 		Manmer: I wonder what i should put in my future cubicle.
-		Manmer: Hey, have you found my resume yet? it should be in the tall grass.
+		Manmer: Hey, have you found my resume yet? it should be in a patch of tall grass.
 		[end_timeline]
 	else:
 		if {finishedFish} == true:
@@ -55,7 +55,7 @@ Manmer: ...
 Manmer: I must also search for my resume.
 - I'll help you!
 	Manmer: You are kind.
-	Manmer: It might be in the tall grass, could you go search for me?
+	Manmer: It might be in the patch tall grass, could you go search for me?
 	you: On it, boss.
 - Good luck with that.
 	Manmer: You’ll help me, won’t you?

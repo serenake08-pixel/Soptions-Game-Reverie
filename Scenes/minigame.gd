@@ -57,7 +57,7 @@ func _load_level() -> void:
 	for old_enemy in get_tree().get_nodes_in_group("enemies"):
 		old_enemy.remove_from_group("enemies")
 		old_enemy.queue_free()
-	numEnemies = (level-1)*2
+	numEnemies = (level-1)*2+1
 	
 	var emptyTiles = _get_empty_tiles()
 	for i in range(0, numEnemies):

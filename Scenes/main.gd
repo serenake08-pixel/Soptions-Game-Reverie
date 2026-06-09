@@ -2,11 +2,13 @@ extends Node
 
 #code for activating computer
 const minigame = preload("res://Scenes/minigame.tscn")
+const mikazuki = preload("res://Scenes/Mikazuki.tscn")
 var minigameInstance: Node
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Monster.hide()
 	$Computer.connect("comp_minigame", _on_computer_minigame)
 
 func _on_computer_minigame() -> void:
@@ -27,11 +29,7 @@ func _on_computer_minigame() -> void:
 
 func _on_game(argument) -> void:
 	if minigameInstance.atDeath:
-		$Computer.computer_death()
-		await Dialogic.timeline_ended
-		minigameInstance.queue_free()
-		await get_tree().create_timer(1).timeout
-		$Computer.monster_cutscene()
+		_cutscene()
 		return
 	if !argument:
 		minigameInstance.hide()
@@ -52,3 +50,32 @@ func _inMinigame() -> bool:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
+func _cutscene() -> void:
+	$Monster.global_position = $Player.global_position - Vector2(50,50)
+	$Monster.show()
+	$Computer.computer_death()
+	await Dialogic.timeline_ended
+	minigameInstance.queue_free()
+	await get_tree().create_timer(1).timeout
+	await $Computer.monster_cutscene()
+	
+	$Player.disabled = true
+	var tween = create_tween()
+	tween.tween_property($Monster, "global_position", $Player.global_position - Vector2(30,20), 2)
+	tween.tween_property($Monster, "global_position", $Player.global_position - Vector2(20,20), 2)
+
+	await get_tree().create_timer(4).timeout
+	
+	var mikazuki_instance = mikazuki.instantiate()
+	mikazuki_instance.position = $Player.position - Vector2(6,7)
+	add_child(mikazuki_instance)
+	
+	#TODO COOL EXPLOSION ANIMATION
+	await get_tree().create_timer(2).timeout
+	
+	$Monster.hide()
+	
+	await mikazuki_instance.interact()
+	mikazuki_instance.queue_free()
+	
