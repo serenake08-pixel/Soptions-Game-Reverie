@@ -12,6 +12,13 @@ Mikazuki: Come to my house.
 you: Where's your house?
 Mikazuki: 3 Rock Pile Lane.
 Mikazuki: You'll know it when you see it.
+set {metMikazuki} = true
+[end_timeline]
+if {metMikazuki} == true:
+	jump met
+label met
+You look at the girl hesitantly.
+Mikazuki: Take a seat.
 [end_timeline]
 you: Are you...
 - shearing the sheep?
@@ -23,14 +30,6 @@ you: Are you...
 	Mikazuki: Their wool is beautiful.
 	Mikazuki: But no.
 [end_timeline]
-Mikazuki: Here it is.
-A fragrant aroma filters through the air.
-You gratefully take a piece of meat from the plate and begin to eat, even though you aren't hungry.
-You can't remember the last time you [i]were[/i] hungry.
-Mikazuki: It's a special recipe. By me.
-you: ...
-You feel like something isn't right.
-you: ...
 you: Is this sheep??
 Mikazuki: Yes.
 you: You...you can't! Those sheep are my friends!
@@ -52,3 +51,17 @@ you: ...
 - Hug her
 - Shake your head
 - Hug the sheep
+if :
+# BELOW: after you go finish dinner  and come outside
+you: Hey, don't go killing more sheep.
+Mikazuki: It's not like I can eat anything else.
+Mikazuki: I don't eat vegetables. I can't.
+you: What do you mean??
+you: Of course you can eat vegetables!
+A strangle feeling fills the air. It feels like something has changed.
+Mikazuki: For some reason, I feel a craving for spinach.
+you: ...
+you: Let's make you a garden.
+you: Do you have seeds?
+Mikazuki: I [i]can[/i] have seeds.
+She takes a deep breath.

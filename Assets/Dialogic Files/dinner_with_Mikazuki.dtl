@@ -9,18 +9,82 @@ if {reverse} == true:
 		When it subsides, you feel much better!
 		set {reverse} = false
 		[signal arg="player_normal"]
-	- Ew no
-		You just cannot bring yourself to do it!
+	- Ew... no
+		The liquid bubbles slowly.
+		You can't bring yourself to do it!
 		You pretend to sip on it instead.
 You sit down for supper...
-[background scene="res://Scenes/Transition.tscn" fade="0.0"]
+[background scene="res://Scenes/Transition.tscn" arg="res://Assets/Background Stuff/Untitled276_20260607221315.png" fade="0.0"]
 [wait time="1.0"]
-As you dig into some delicious lamb chops, the girl leaves.
-All alone, something tugs at your heartstrings as you recall her past, flooding over you like a wave\:
-TRAGIC BACKSTORY WOW
-Oh, to be a cool sword girl living in a quaint house in a quaint field.
+Mikazuki: Here it is.
+A fragrant aroma filters through the air.
+It smells delicious.
+Mikazuki: It's a special recipe. By me.
+You gratefully take a piece of meat from the plate and begin to eat, even though you aren't hungry.
+You can't remember the last time you [i]were[/i] hungry.
+It tastes great, but something feels off.
+...
+# end cutscene here, back to pixel world w lamb on table
+It tastes like...
+you: Sheep!
+The girl nods.
+- How could you?
+	you: This is a travesty!!
+	you: How could you do such a thing?? The sheep are my friends!
+	The girl closes her eyes.
+	Mikazuki: For there to be life, there must be death.
+- This is gross..
+	You push the plate away, appalled.
+	The girl looks hurt.
+	Mikazuki: I should've known.
+	Mikazuki: My tastes are far too refined for commoners like you to understand.
+	you: How could you kill the sheep?? They are my friends!
+	Mikazuki: I have no choice.
+	Mikazuki: I hope you understand.
+- It tastes too good to complain..
+	you: I'm going to need your recipe.
+	Mikazuki: Recipe?
+	Mikazuki: Cooking is like potion brewing. You must follow your heart.
+	She begins pacing and muttering to herself.
+	Mikazuki: Five cloves of garlic...
+	Mikazuki: A tablespoon of paprika...
+	Mikazuki: Fresh lamb.. yes, that's important..
+	You allow her to mutter in peace.
+	..................
+	...........
+Mikazuki: I don't eat vegetables.
+You feel the faint tug of a memory.
+# memory here
+- Tell me about yourself.
+	Of course.
+- You're even cooler than I imagined!
+	Mikazuki: I know. I'm the coolest.
+She flips her hair, and the air sparkles with her coolness.
+Mikazuki: I was an orphan raised by my cruel grandmother.
+Mikazuki: All the kids at school hated me because they were jealous of my beauty and intelligence.
+you: What school?
+Mikazuki: Sword school.
+Mikazuki: Anyway, one day, I found out that my grandma wasn't my grandma after all, but an evil henchman.
+Mikazuki: My real grandma turned out to be the fairy queen.
+Mikazuki: Hey, are you listening?
+you: You realize you had your head in your hands, and quickly return to a normal position.
+Mikazuki: After they realized how cool I was, my classmates all respected me. And I became a famous actress.
+Mikazuki: I come here to escape the paparazzi.
+Oh, to be a cool, beautiful, intelligent sword girl living in a cute cave in a quaint field.
+I only wish I was as cool as her. Wow. Did I mention how beautiful she is?
+you: Sigh.. even the narrator's in love with her.
+With a grand flourish, the girl materializes a comb and begins to brush her hair.
+- I can't believe I wrote this.
+	you: I can't believe I wrote something so riddled in tropes.
+	Mikazuki: Huh?
+	you: Nothing.
+- How cool..
+	you: You're so cool.
+	Mikazuki: Yeah, I get that all the time.
+Mikazuki: I'm going to go get some fresh air.
+Mikazuki: Meet you outside!
 [wait time="1.5"]
-You dutifully finish your supper and prepare to go find the sword girl outside.
+You prepare to go find the sword girl outside.
 label leaveHouse
 Leave the house?
 - Yes

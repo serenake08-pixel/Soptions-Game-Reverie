@@ -5,10 +5,10 @@ if {metFish} == true:
 		[end_timeline]
 	else:
 		if {finishedFish} == true:
-			Manmer: Thanks again old chap...now I can get back to perparing for my interview.
-			Manmer: He starts muttering to himself.
-			Manmer: ...Hm... yes, that's a good question. I believe I'm the perfect tuna-can didate for this job because I...
-			you: You decide to let him practice in peace.
+			Manmer: Thanks again, child...now I can get back to preparing for my interview.
+			He starts muttering to himself.
+			Manmer: ...Hm... yes, that's a good question. I believe I'm the perfect tuna-candidate for this job because I...
+			You decide to let him practice in peace.
 			[end_timeline]
 		else:
 			you: Here it is!
