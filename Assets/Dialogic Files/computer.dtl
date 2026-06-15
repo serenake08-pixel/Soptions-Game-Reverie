@@ -1,3 +1,6 @@
+if {metMikazuki} == true:
+	You would rather not touch the computer again...
+	[end_timeline]
 A dusty rusty musty crusty computer. And yet, it looks very inviting.
 Turn it on?
 - Yes

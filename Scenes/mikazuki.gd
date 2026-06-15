@@ -24,4 +24,5 @@ func _process(delta: float) -> void:
 	pass
 	
 func interact() -> void:
+	#print(Dialogic.VAR.dinnerDialog)
 	await startDialogue("res://Assets/Dialogic Files/MikazukiMeet.dtl")

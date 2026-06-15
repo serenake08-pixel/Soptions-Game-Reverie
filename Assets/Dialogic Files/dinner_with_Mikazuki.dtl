@@ -1,4 +1,4 @@
-if {dinnerDialog} == "true":
+if {dinnerDialog} == true:
 	jump leaveHouse
 if {reverse} == true:
 	The girl seems to notice you walking very oddly. Shaking her head, she gives you a green concoction.
@@ -55,6 +55,7 @@ The girl nods.
 Mikazuki: I don't eat vegetables.
 [signal arg_type="dict" arg="{"memory":"res://Assets/pictures/mikazuki_memory.tres"}"]
 You feel the faint tug of a memory.
+<Empty Text Event>
 - Tell me about yourself.
 	Of course.
 - You're even cooler than I imagined!
@@ -83,11 +84,12 @@ With a grand flourish, the girl materializes a comb and begins to brush her hair
 	Mikazuki: Yeah, I get that all the time.
 Mikazuki: I'm going to go get some fresh air.
 Mikazuki: Meet you outside!
+[signal arg="Mikazuki_leave"]
 [wait time="1.5"]
 You prepare to go find the sword girl outside.
+set {dinnerDialog} = true
 label leaveHouse
 Leave the house?
 - Yes
 	[signal arg="leave_house"]
 - Not yet
-set {dinnerDialog} = true

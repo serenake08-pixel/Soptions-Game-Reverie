@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://cmenute2uanat"]
+[gd_scene format=4 uid="uid://cw8ep1qo4dijj"]
 
 [ext_resource type="Texture2D" uid="uid://clb1ti3fqbux1" path="res://Assets/Background Stuff/girlfloor_walls.png" id="1_2y50f"]
 [ext_resource type="Script" uid="uid://bq6btni10d2nr" path="res://Scenes/house.gd" id="1_karln"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://qxud86ttj5e" path="res://Assets/Background Stuff/sword collectiondarker.png" id="7_fl8vv"]
 [ext_resource type="PackedScene" uid="uid://c21ylvion3xme" path="res://Scenes/player.tscn" id="7_l3jqw"]
 [ext_resource type="PackedScene" uid="uid://budlvuxb0gjjh" path="res://Scenes/NPCs_Interactables.tscn" id="8_x4svt"]
-[ext_resource type="Script" uid="uid://bsgnqtq2umxhj" path="res://Scenes/chair.gd" id="9_0h1dt"]
+[ext_resource type="Script" path="res://Scenes/chair.gd" id="9_0h1dt"]
 [ext_resource type="Texture2D" uid="uid://dyvll2k0beim" path="res://Assets/Background Stuff/chair.png" id="9_ttg8n"]
 [ext_resource type="Texture2D" uid="uid://c1qg6hs8bui85" path="res://Assets/Background Stuff/bonsaitable.png" id="10_0h1dt"]
 [ext_resource type="Texture2D" uid="uid://dm01bshhds5nu" path="res://Assets/Background Stuff/table.png" id="11_x4svt"]

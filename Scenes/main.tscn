@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ngjyss8nyf" path="res://Assets/quest/resume.png" id="19_fevyy"]
 [ext_resource type="Texture2D" uid="uid://bwwtq31nlcxeq" path="res://Assets/grass interactables/cave.png" id="19_gt3je"]
 [ext_resource type="PackedScene" uid="uid://imodq47wpqxy" path="res://Scenes/Collectable.tscn" id="19_hibaj"]
+[ext_resource type="AudioStream" uid="uid://boiv3wy82b06h" path="res://Assets/Music/unamed waltz_.mp3" id="27_1w6v2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbgmd"]
 texture = ExtResource("2_6iyac")
@@ -362,6 +363,10 @@ itemName = "RESUME"
 [node name="CollisionShape2D" parent="RESUME/Area2D" parent_id_path=PackedInt32Array(1774154770, 1416121586) index="0" unique_id=2062357937]
 position = Vector2(5.820766e-11, 0.00030517578)
 shape = SubResource("CapsuleShape2D_hibaj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="." unique_id=1812260009]
+stream = ExtResource("27_1w6v2")
+volume_db = -17.5191
 
 [editable path="elevator"]
 [editable path="Monster"]

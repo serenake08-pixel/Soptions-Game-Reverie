@@ -4,6 +4,8 @@ var level = 1
 var numEnemies
 var atDeath = false
 var playerTiles = [Vector2i(2,2), Vector2i(2,20), Vector2i(35,2), Vector2i(35,20)]
+var isPlaying = false
+@onready var music_player = $AudioStreamPlayer2D
 
 const ENEMY_SCENE = preload("res://Scenes/enemy.tscn")
 @onready var quit_button = %QUIT
@@ -19,6 +21,28 @@ func _ready() -> void:
 	%Mikazuki_player.died.connect(_on_death)
 	%Mikazuki_player.finishedLevel.connect(_next_level)
 	pass # Replace with function body.
+	
+func music(play: bool) -> void:
+	if play:
+		if isPlaying:
+			return
+		isPlaying = true
+		while isPlaying:
+			music_player.volume_db = -15
+			music_player.play()
+			isPlaying = true
+			await music_player.finished
+			await get_tree().create_timer(randi_range(5, 10)).timeout
+	else:
+		var old_tweens = get_tree().get_processed_tweens()
+		for t in old_tweens:
+			if t.is_valid():
+				t.kill()
+		isPlaying = false
+		var tween = create_tween()
+		tween.tween_property(music_player, "volume_db", -80.0, 3)
+		await tween.finished
+		music_player.stop()
 	
 func _next_level() -> void:
 	%Mikazuki_player.disabled = true
@@ -44,7 +68,10 @@ func _on_button_pressed() -> void:
 
 func _on_game(argument) -> void:
 	if argument:
+		music(true)
 		_load_level()
+	else:
+		music(false)
 	quit_button.disabled = false
 
 func _load_level() -> void:
@@ -73,7 +100,7 @@ func _load_level() -> void:
 	
 func _on_death() -> void:
 	%Mikazuki_player.disabled = true
-	var blinking_things = [%Mikazuki_player, %Maze, %GAMEOVER] 
+	var blinking_things = [%Mikazuki_player, %Maze, %GAMEOVER, %Star] 
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	for e in enemies:
 		blinking_things.append(e)
@@ -83,7 +110,8 @@ func _on_death() -> void:
 			o.show()
 		await get_tree().create_timer(1.0).timeout
 		for o in blinking_things:
-			o.hide()
+			if (o != null):
+				o.hide()
 		%GAMEOVER.show()
 		await get_tree().create_timer(1.0).timeout
 	atDeath = true

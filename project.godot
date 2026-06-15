@@ -62,7 +62,7 @@ variables={
 },
 "NewVar2": "",
 "collectable": "nothing?",
-"dinnerDialog": "",
+"dinnerDialog": false,
 "finishedFish": false,
 "i": 0,
 "metFish": false,

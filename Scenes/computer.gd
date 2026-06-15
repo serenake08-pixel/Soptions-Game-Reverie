@@ -1,5 +1,6 @@
 extends Interactable
 signal comp_minigame
+var disabled = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,13 +13,15 @@ func _on_dialogic_signal(argument) -> void:
 		emit_signal("comp_minigame")
 
 func interact() -> void:
-	startDialogue("res://Assets/Dialogic Files/computer.dtl")
-	pass
+	if disabled:
+		return
+	await startDialogue("res://Assets/Dialogic Files/computer.dtl")
 
 func interact_quit() -> void:
 	startDialogue("res://Assets/Dialogic Files/computerquit.dtl")
 
 func computer_death() -> void:
+	disabled = true
 	startDialogue("res://Assets/Dialogic Files/computerdeath.dtl")
 
 func monster_cutscene() -> void:

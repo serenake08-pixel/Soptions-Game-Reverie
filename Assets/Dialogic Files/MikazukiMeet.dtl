@@ -1,3 +1,7 @@
+if {dinnerDialog} == true:
+	jump outside
+if {metMikazuki} == true:
+	jump met
 The girl's composure screams someone straight out an action movie.
 She seems oddly familiar, though you can't put a finger on why.
 - Who are you?
@@ -14,8 +18,6 @@ Mikazuki: 3 Rock Pile Lane.
 Mikazuki: You'll know it when you see it.
 set {metMikazuki} = true
 [end_timeline]
-if {metMikazuki} == true:
-	jump met
 label met
 You look at the girl hesitantly.
 Mikazuki: Take a seat.
@@ -53,6 +55,7 @@ you: ...
 - Hug the sheep
 if :
 # BELOW: after you go finish dinner  and come outside
+label outside
 you: Hey, don't go killing more sheep.
 Mikazuki: It's not like I can eat anything else.
 Mikazuki: I don't eat vegetables. I can't.
@@ -67,7 +70,7 @@ Mikazuki: I [i]can[/i] have seeds.
 She takes a deep breath.
 Tilled dirt suddenly appeared with small flecks of seeds scattered around.
 Mikazuki: Thanks for reminding me about vegetables.
-Mikazuki: Once they grow, I'm excited to make lamb sandwiches.
+Mikazuki: Once they grow, I'm excited to make arugula sandwiches.
 - I'd love to try some.
 	Mikazuki: Maybe. But I don't know if you'll get the chance to this time.
 - GO VEGAN NOW
@@ -78,3 +81,4 @@ Mikazuki: Once they grow, I'm excited to make lamb sandwiches.
 	A mysterious change. The air ripples with anticipation.
 	Mikazuki: Friends? Oh yes, the sheep. Aren't they the sweetest? I adore them.
 	You feel a bit awestruck that it happened again.
+[end_timeline]
