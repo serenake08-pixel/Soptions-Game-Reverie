@@ -3,6 +3,7 @@ signal game
 var level = 1
 var numEnemies
 var atDeath = false
+var playerTiles = [Vector2i(2,2), Vector2i(2,20), Vector2i(35,2), Vector2i(35,20)]
 
 const ENEMY_SCENE = preload("res://Scenes/enemy.tscn")
 @onready var quit_button = %QUIT
@@ -21,18 +22,18 @@ func _ready() -> void:
 	
 func _next_level() -> void:
 	%Mikazuki_player.disabled = true
-	var blinking_things = [%Mikazuki_player, %Maze, %HealthBar, %HealthLabel, %LevelLabel, %QUIT] 
+	var blinking_things = [%Mikazuki_player, %Maze, %HealthBar, %HealthLabel, %LevelLabel, %QUIT, %Star] 
 	var enemies = get_tree().get_nodes_in_group("enemies")
 	for e in enemies:
 		blinking_things.append(e)
 		e.disabled = true
-	for i in range(1,4):
+	for i in range(1,3):
 		for o in blinking_things:
 			o.hide()
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.7).timeout
 		for o in blinking_things:
 			o.show()
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(0.7).timeout
 	level += 1
 	%Mikazuki_player.disabled = false
 	_load_level()
@@ -48,7 +49,7 @@ func _on_game(argument) -> void:
 
 func _load_level() -> void:
 	%Maze.clear()
-	var pattern = %Maze.tile_set.get_pattern(level-1)
+	var pattern = %Maze.tile_set.get_pattern((level-1)%3)
 	var grid_pos = Vector2i(1, 1)
 	%Maze.set_pattern(grid_pos, pattern)
 
@@ -57,11 +58,18 @@ func _load_level() -> void:
 	for old_enemy in get_tree().get_nodes_in_group("enemies"):
 		old_enemy.remove_from_group("enemies")
 		old_enemy.queue_free()
-	numEnemies = (level-1)*2+1
+	numEnemies = level
 	
-	var emptyTiles = _get_empty_tiles()
+	var pos = playerTiles[randi_range(0,playerTiles.size()-1)]
+	%Mikazuki_player.global_position = %Maze.to_global(%Maze.map_to_local(pos))
+	
+	var emptyEnemyTiles = _get_enemy_tiles()
 	for i in range(0, numEnemies):
-		spawn_enemy(emptyTiles[randi_range(0,emptyTiles.size())])
+		spawn_enemy(emptyEnemyTiles[randi_range(0,emptyEnemyTiles.size()-1)])
+	
+	var emptyStarTiles = _get_star_tiles()
+	var starPos = emptyStarTiles[randi_range(0,emptyStarTiles.size()-1)]
+	%Star.global_position = %Maze.to_global(%Maze.map_to_local(starPos))
 	
 func _on_death() -> void:
 	%Mikazuki_player.disabled = true
@@ -103,6 +111,21 @@ func _get_empty_tiles() -> Array[Vector2i]:
 		for j in range(1,21):
 			var c = Vector2i(i,j)
 			if %Maze.get_cell_tile_data(c) == null:
-				if (%Mikazuki_player.global_position - %Maze.to_global(%Maze.map_to_local(c))).length() > 50:
-					ret.append(Vector2i(i,j))
+				ret.append(Vector2i(i,j))
+	return ret
+
+func _get_enemy_tiles() -> Array[Vector2i]:
+	var tiles = _get_empty_tiles()
+	var ret: Array[Vector2i] = []
+	for c in tiles:
+		if %Mikazuki_player.global_position.distance_to(%Maze.to_global(%Maze.map_to_local(c))) > 50:
+			ret.append(c)
+	return ret
+
+func _get_star_tiles() -> Array[Vector2i]:
+	var tiles = _get_empty_tiles()
+	var ret: Array[Vector2i] = []
+	for c in tiles:
+		if %Mikazuki_player.global_position.distance_to(%Maze.to_global(%Maze.map_to_local(c))) > 100:
+			ret.append(c)
 	return ret

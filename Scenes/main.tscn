@@ -352,7 +352,7 @@ position = Vector2(39.999996, -139.99998)
 shape = SubResource("CircleShape2D_ee4r6")
 
 [node name="Mikazuki" parent="." unique_id=1748437809 instance=ExtResource("16_k12tt")]
-position = Vector2(-323, -267)
+position = Vector2(-373, -311)
 
 [node name="RESUME" parent="." unique_id=1774154770 instance=ExtResource("19_hibaj")]
 position = Vector2(343, -91.00001)

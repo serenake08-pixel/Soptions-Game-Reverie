@@ -50,9 +50,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_afpow"]
-radius = 7.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
 radius = 8.062258
 
@@ -67,7 +64,6 @@ sprite_frames = SubResource("SpriteFrames_287tu")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1984875593]
-shape = SubResource("CircleShape2D_afpow")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=999518702]
 

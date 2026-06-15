@@ -5,6 +5,8 @@ var speed = defaultSpeed
 var disabled = true
 var health = 3
 var default_pos = Vector2(139,75)
+const dmgCooldown = 2.0
+var dmgCooldownTimer = 3
 signal died
 signal finishedLevel
 #TODO finish level signaling
@@ -20,9 +22,21 @@ func _on_game(argument) -> void:
 	pass
 	
 func _on_hurtbox_entered(area: Node2D) -> void:
+	if area.get_parent() == %Star:
+		$AnimatedSprite2D.play("idle")
+		finishedLevel.emit()
+		return
+	if dmgCooldownTimer > 0:
+		return
 	health -= 1
 	print("health lost! " + str(health))
 	%HealthBar.value = health
+	dmgCooldownTimer = 3
+	for i in range(1,4):
+		self.hide()
+		await get_tree().create_timer(dmgCooldown/6).timeout
+		self.show()
+		await get_tree().create_timer(dmgCooldown/6).timeout
 	if health == 0:
 		died.emit()
 		pass
@@ -34,6 +48,8 @@ func _on_hitbox_entered(area: Node2D) -> void:
 func _physics_process(delta: float) -> void:
 	if disabled:
 		return	
+	if dmgCooldownTimer > 0:
+		dmgCooldownTimer -= delta
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

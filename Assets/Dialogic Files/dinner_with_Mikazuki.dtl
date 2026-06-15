@@ -1,4 +1,4 @@
-if {metMikazuki} == true:
+if {dinnerDialog} == "true":
 	jump leaveHouse
 if {reverse} == true:
 	The girl seems to notice you walking very oddly. Shaking her head, she gives you a green concoction.
@@ -53,8 +53,8 @@ The girl nods.
 	..................
 	...........
 Mikazuki: I don't eat vegetables.
+[signal arg_type="dict" arg="{"memory":"res://Assets/pictures/mikazuki_memory.tres"}"]
 You feel the faint tug of a memory.
-# memory here
 - Tell me about yourself.
 	Of course.
 - You're even cooler than I imagined!
@@ -90,4 +90,4 @@ Leave the house?
 - Yes
 	[signal arg="leave_house"]
 - Not yet
-set {metMikazuki} = true
+set {dinnerDialog} = true

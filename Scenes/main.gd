@@ -70,6 +70,7 @@ func _cutscene() -> void:
 	var mikazuki_instance = mikazuki.instantiate()
 	mikazuki_instance.position = $Player.position - Vector2(6,7)
 	add_child(mikazuki_instance)
+	mikazuki_instance.show()
 	
 	#TODO COOL EXPLOSION ANIMATION
 	await get_tree().create_timer(2).timeout

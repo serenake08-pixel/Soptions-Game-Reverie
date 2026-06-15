@@ -1,7 +1,7 @@
 extends CharacterBody2D
 const SPEED = 15.0
 var speed = SPEED
-var direction = Vector2.DOWN
+var direction = Vector2.ZERO
 const DIRECTIONS = [Vector2.UP, Vector2.DOWN, Vector2.LEFT, Vector2.RIGHT]
 var target_position
 var player
@@ -16,10 +16,13 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	get_parent().game.connect(_on_game)
+	#$Hurtbox.area_entered.connect(_on_area_entered)
 	TILE_SIZE *= maze.scale.x
 	#x and y scales should be same
+	direction = _get_available_directions().pick_random()
 	global_position = get_tile_center(global_position)
 	target_position = get_tile_center(global_position + TILE_SIZE * direction)
+	
 
 	
 func _on_game(argument) -> void:
@@ -40,15 +43,8 @@ func _physics_process(delta: float) -> void:
 
 	#at target
 	global_position = target_position
-	var availableDirections = []
-	for d in DIRECTIONS:
-			if !is_maze_tile(d): availableDirections.append(d)
-	if availableDirections.has(-direction) and availableDirections.size() >= 2:
-		availableDirections.erase(-direction)
-	if availableDirections.is_empty():
-		print("error in mapping(?), nowhere to go.")
-		return
-	
+
+	var availableDirections = _get_available_directions()
 	if global_position.distance_to(player.global_position) < 30:
 		speed = SPEED + 10
 		var playerDirection = player.global_position - global_position
@@ -94,3 +90,13 @@ func is_maze_tile(dir: Vector2) -> bool:
 func random_direction(availableDirections: Array) -> Vector2:
 	var i = randi_range(0, availableDirections.size()-1)
 	return availableDirections[i]
+
+func _get_available_directions() -> Array[Vector2]:
+	var availableDirections: Array[Vector2] = []
+	for d in DIRECTIONS:
+		if !is_maze_tile(d): availableDirections.append(d)
+	if availableDirections.has(-direction) and availableDirections.size() >= 2:
+		availableDirections.erase(-direction)
+	if availableDirections.is_empty():
+		print("error in mapping(?), nowhere to go?")
+	return availableDirections

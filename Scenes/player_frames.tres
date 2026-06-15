@@ -18,6 +18,14 @@ animations = [{
 "texture": ExtResource("1_4scl2")
 }],
 "loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4scl2")
+}],
+"loop": true,
 "name": &"idleDown",
 "speed": 5.0
 }, {

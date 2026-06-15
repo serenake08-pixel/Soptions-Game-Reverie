@@ -259,7 +259,7 @@ func preload_timeline(timeline_resource:Variant) -> Variant:
 ## Clears and stops the current timeline.
 ## If [param skip_ending] is `true`, the dialog_ending_timeline is not getting played
 func end_timeline(skip_ending := false) -> void:
-
+	timeline_ended.emit()
 	if not skip_ending and dialog_ending_timeline and current_timeline != dialog_ending_timeline:
 		start(dialog_ending_timeline)
 		return
@@ -273,8 +273,6 @@ func end_timeline(skip_ending := false) -> void:
 				Styles.get_layout_node().queue_free()
 			1:
 				Styles.get_layout_node().hide()
-
-	timeline_ended.emit()
 
 
 ## Method to check if timeline exists.
