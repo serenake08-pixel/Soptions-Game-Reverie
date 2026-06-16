@@ -19,7 +19,7 @@
 &"portraits": {
 "Default": {
 "export_overrides": {
-"image": "\"res://Assets/grass interactables/nsheepwalk2.png\""
+"image": "\"res://Assets/pictures/fishheadshot.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),

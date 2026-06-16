@@ -81,4 +81,8 @@ Mikazuki: Once they grow, I'm excited to make arugula sandwiches.
 	A mysterious change. The air ripples with anticipation.
 	Mikazuki: Friends? Oh yes, the sheep. Aren't they the sweetest? I adore them.
 	You feel a bit awestruck that it happened again.
+[wait time="1.0"]
+set {mikazukiQuestFinished} = true
+Obtained 1 *VEGETABLE SEED*
+*END OF DEMO*
 [end_timeline]

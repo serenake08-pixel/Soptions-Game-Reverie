@@ -169,7 +169,6 @@ texture_normal = SubResource("AtlasTexture_puep3")
 texture_hover = SubResource("AtlasTexture_hr1fu")
 
 [node name="Overlay" type="ColorRect" parent="." unique_id=81933383]
-visible = false
 z_index = 1
 material = SubResource("ShaderMaterial_xcq3l")
 offset_left = 123.5

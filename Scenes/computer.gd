@@ -1,6 +1,8 @@
 extends Interactable
 signal comp_minigame
 var disabled = false
+var intro = false
+signal comp_intro
 
 
 # Called when the node enters the scene tree for the first time.
@@ -29,4 +31,10 @@ func monster_cutscene() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if !intro and self.global_position.distance_to(%Player.global_position) < 100:
+		comp_intro.emit()
+		await get_tree().create_timer(1).timeout
+		$ComputerAudio.play()
+		intro = true
+		
 	pass

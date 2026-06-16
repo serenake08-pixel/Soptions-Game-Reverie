@@ -12,11 +12,17 @@ var isPlaying = false
 func _ready() -> void:
 	$Monster.hide()
 	$Computer.connect("comp_minigame", _on_computer_minigame)
+	$Computer.connect("comp_intro", _on_computer_intro)
 	if Global.coming_from_house:
 		$Player.global_position = Vector2(-360, -311)
 		Global.coming_from_house = false
 	music(true)
 	
+func _on_computer_intro() -> void:
+	music(false)
+	await get_tree().create_timer(16).timeout
+	music(true)
+
 func music(play: bool) -> void:
 	if play:
 		if isPlaying:

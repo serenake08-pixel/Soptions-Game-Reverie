@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ngjyss8nyf" path="res://Assets/quest/resume.png" id="19_fevyy"]
 [ext_resource type="Texture2D" uid="uid://bwwtq31nlcxeq" path="res://Assets/grass interactables/cave.png" id="19_gt3je"]
 [ext_resource type="PackedScene" uid="uid://imodq47wpqxy" path="res://Scenes/Collectable.tscn" id="19_hibaj"]
+[ext_resource type="AudioStream" uid="uid://lg0glqcqtv8j" path="res://Assets/Music/a mysterious place.mp3" id="22_ueoa1"]
 [ext_resource type="AudioStream" uid="uid://boiv3wy82b06h" path="res://Assets/Music/unamed waltz_.mp3" id="27_1w6v2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cbgmd"]
@@ -333,7 +334,11 @@ position = Vector2(115, 199)
 collision_mask = 1
 
 [node name="Computer" parent="." unique_id=1731291614 instance=ExtResource("8_344ge")]
-position = Vector2(34, 7)
+position = Vector2(101, -579)
+
+[node name="ComputerAudio" type="AudioStreamPlayer" parent="Computer" unique_id=353218381]
+stream = ExtResource("22_ueoa1")
+volume_db = -32.5657
 
 [node name="Cave" parent="." unique_id=1105865130 instance=ExtResource("18_ee4r6")]
 position = Vector2(-359.99997, -340.99997)

@@ -58,7 +58,6 @@ func _physics_process(delta: float) -> void:
 		if $AnimatedSprite2D.animation != null:
 			$AnimatedSprite2D.stop()
 		return
-		#TODO: there are two ending siganls being claled and player only moves after hte second late one.
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
